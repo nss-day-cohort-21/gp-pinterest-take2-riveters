@@ -1,0 +1,20 @@
+{
+    "board" : {
+        "uid":"",
+        "title":""
+    },
+    "pins" : {
+        "uid": "",
+        "boardid":"",
+        "url":"",
+        "title":"",
+        "img":"",
+        "description":"",
+        "tags":""
+    },
+    "users" : {
+        "uid": "",
+        "name":"",
+        "email":""
+    }
+  }
