@@ -24,31 +24,6 @@ app.config(($routeProvider) => {
             controller: 'listCtrl',
             resolve: {isAuth}
         })
-        .when('/login', {
-            templateUrl: 'partials/user.html',
-            controller: 'userCtrl'
-        })
-        .when('/task-list', {
-            templateUrl: 'partials/list.html',
-            controller: 'listCtrl',
-            resolve: {isAuth}
-        })
-        .when('/item/newItem', {
-            templateUrl: 'partials/form.html',
-            controller: 'addTaskCtrl',
-            resolve: {isAuth}
-        })
-        //: tells it that what's coming is dynamic
-        .when('/task/:itemId', {
-            templateUrl: 'partials/details.html',
-            controller: 'detailTaskCtrl',
-            resolve: {isAuth}
-        })
-        .when('/task/:itemId/edit', {
-            templateUrl: 'partials/form.html',
-            controller: 'editTaskCtrl',
-            resolve: {isAuth}
-        })
         .otherwise('/');
 });
 //forces something to run whenthe app initially starts up

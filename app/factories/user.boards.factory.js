@@ -2,6 +2,11 @@
 
 console.log('user.boards');
 
+app.factory("userFactory", function ($q, $http) {
+    
+
+
+
 function addBoard(){
 
 }
@@ -33,3 +38,4 @@ function singleBoard(){
 function singlePin(){
     
 }
+});

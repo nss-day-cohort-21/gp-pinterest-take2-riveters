@@ -23,9 +23,7 @@ app.factory("userFactory", function ($q, $http) {
     const getCurrentUser = function () {
         return currentUser;
     };
-    // const loginGoogle = function(){
 
-    // };
     const logIn = function (userObj) {
         return firebase.auth().signInWithEmailAndPassword(userObj.email, userObj.password)
             .catch(function (error) {
