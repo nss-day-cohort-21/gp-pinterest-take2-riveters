@@ -1,37 +1,92 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>PUT TITLE HERE!</title>
-        <!-- ///////////STYLESHEETS START/////////// -->
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <!-- ///////////END STYLESHEETS/////////// -->
-    </head>
 
-    <body>
-        <!-- ///////////NAVIGATION START/////////// -->
-        <div ng-include="'partials/navbar.html'"></div>
-        <!-- ///////////NAVIGATION END/////////// -->
 
-        <!-- ///////////CONTAINER START/////////// -->
-        <main>
+<head>
+    <title>PUT TITLE HERE!</title>
+    <!-- ///////////STYLESHEETS START/////////// -->
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- ///////////END STYLESHEETS/////////// -->
+</head>
+
+<body>
+    <!-- ///////////NAVIGATION START/////////// -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Logo</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Blog List</a></li>
+                    <li><a href="badges.html">Add Blog Entry</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- ///////////NAVIGATION END/////////// -->
+
+    <!-- ///////////CONTAINER START/////////// -->
+    <main>
+
+
+
+
+        <div ng-view>
+            <!-- This is the body -->
+
+        </div>
+
+    </main>
+    <!-- ///////////CONTAINER END/////////// -->
+
+    <!-- ///////////FOOTER START/////////// -->
+    <footer class="page-footer">
+        <div class="footer-copyright">
             <div class="container">
-                This is the body
-
+                © 2017 Built by The Riveters
             </div>
-        </main>
-        <!-- ///////////CONTAINER END/////////// -->
 
-        <!-- ///////////FOOTER START/////////// -->
-        <footer class="page-footer">
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2017 Built by Dr. T
-                </div>
-            </div>
+        </div>
+    </footer>
+    <!-- ///////////FOOTER END/////////// -->
+
+    <!-- ///////////SCRIPTS/////////// -->
+    <!-- JQUERY -->
+    <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <!-- ANGULAR -->
+    <script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+    <!-- FIREBASE -->
+    <script type="text/javascript" src="./lib/node_modules/firebase/firebase.js"></script>
+    <!-- JAVASCRIPTS -->
+    <script src="./app/app.js"></script>
+    <script src="./app/creds/fb.creds.js"></script>
+    <!-- factories -->
+    <script src="app/factories/auth.factory.js"></script>
+    <script src="app/factories/user.boards.factory.js"></script>
+    <script src="app/factories/filter.factory.js"></script>
+
+    <!--controllers -->
+    <script src="app/controllers/navbar.controller.js"></script>
+    <script src="app/controllers/addboardandpins.controller.js"></script>
+    <script src="app/controllers/addboardandpins.controller.js"></script>
+    <script src="app/controllers/auth.controller.js"></script>
+    <script src="app/controllers/boards.controller.js"></script>
+
+
+
+
+
+    <!-- ///////////END SCRIPTS/////////// -->
+</body>
+
+</html>
+
         </footer>
         <!-- ///////////FOOTER END/////////// -->
 
