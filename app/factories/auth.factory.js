@@ -1,4 +1,7 @@
 "use strict";
+
+console.log("auth.factory");
+
 app.factory("userFactory", function ($q, $http) {
     let currentUser = null;
 
