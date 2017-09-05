@@ -1,7 +1,8 @@
 {
     "board" : {
         "uid":"",
-        "title":""
+        "title":"",
+        "boardid":""
     },
     "pins" : {
         "uid": "",
