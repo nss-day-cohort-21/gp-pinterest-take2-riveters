@@ -52,12 +52,12 @@ app.config(($routeProvider) => {
         .otherwise('/');
 });
 //forces something to run whenthe app initially starts up
-app.run(($location, FBCreds) => {
-    let creds = FBCreds;
-    let authConfig = {
-        apiKey: creds.apiKey,
-        authDomain: creds.authDomain,
-        databaseURL: creds.databaseURL
-    };
-    firebase.initializeApp(authConfig);
-});
+// app.run(($location, FBCreds) => {
+//     let creds = FBCreds;
+//     let authConfig = {
+//         apiKey: creds.apiKey,
+//         authDomain: creds.authDomain,
+//         databaseURL: creds.databaseURL
+//     };
+//     firebase.initializeApp(authConfig);
+// });

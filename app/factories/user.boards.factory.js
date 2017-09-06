@@ -31,5 +31,5 @@ function singleBoard(){
 }
 
 function singlePin(){
-    
+
 }

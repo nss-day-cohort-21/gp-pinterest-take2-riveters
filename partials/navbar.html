@@ -1,20 +1,56 @@
 <nav>
     <div class="nav-wrapper">
-        <ul class="right hide-on-med-and-down">
-            <a href="#!" class="brand-logo left">Logo</a>
-            <li><input type="text" class="form-control" placeholder="Search" ng-model="searchText.search"></li>
-            <li><a ng-show="isLoggedIn" ng-href="#!/item-list">Show All</a></li>
-            <li><a ng-show="isLoggedIn" ng-href="#!/item/newItem">Add Task</a></li>
-            <li><a ng-show="!isLoggedIn">Login</a></li>
-            <li><a ng-show="isLoggedIn" ng-click="logout()" >Logout</a></li>
-        </ul>
-        <i class='dropdown-button material-icons show-on-medium-and-down hide-on-med-and-up right' data-beloworigin="true" href='#' data-activates='dropdownMobile'>menu</i>
-        <a href="#!" class="brand-logo show-on-medium-and-down hide-on-med-and-up left">Logo</a>
-        <ul id="dropdownMobile" class="right nav__links dropdown-content">
-                <li><a ng-show="isLoggedIn" ng-href="#!/item-list">User Profile</a></li>
-                <!-- <li><a ng-show="isLoggedIn" ng-href="#!/item/newItem">Add Task</a></li> -->
-                <li><a ng-show="!isLoggedIn">Login</a></li>
-                <li><a ng-show="isLoggedIn" ng-click="logout()" >Logout</a></li>
-        </ul>
+      <div class="container">
+        <div class="row">
+          <div class="col s2">
+            <a href="#!" class="brand-logo">Logo</a>
+          </div>
+          <div class="col s8">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+                <ul class="right hide-on-med-and-down">
+                  <li><a ng-show="isLoggedIn" ng-href="#!/item-list">Show All</a></li>
+                  <li><a ng-show="isLoggedIn" ng-href="#!/item/newItem">Add Task</a></li>
+                  <li><a ng-show="!isLoggedIn">Login</a></li>
+                  <li><a ng-show="isLoggedIn" ng-click="logout()" >Logout</a></li>
+                </ul>
+                <i class='dropdown-button material-icons show-on-medium-and-down hide-on-med-and-up right' data-beloworigin="true" href='#' data-activates='dropdownMobile'>menu</i>
+                <a href="#!" class="brand-logo show-on-medium-and-down hide-on-med-and-up left">Logo</a>
+                <ul id="dropdownMobile" class="right nav__links dropdown-content">
+                  <li><a ng-show="isLoggedIn" ng-href="#!/item-list">User Profile</a></li>
+                  <li><a ng-show="isLoggedIn" ng-href="#!/item/newItem">Add Task</a></li>
+                  <li><a ng-show="!isLoggedIn">Login</a></li>
+                  <li><a ng-show="isLoggedIn" ng-click="logout()" >Logout</a></li>
+                </ul>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-</nav>
+  </nav>
+
+
+  <!-- <div class="nav-wrapper">
+    <a href="#!" class="brand-logo left">Logo</a>
+    <input type="text" class="form-control" placeholder="Search" ng-model="searchText.search">
+    <ul class="right hide-on-med-and-down">
+        <li><a ng-show="isLoggedIn" ng-href="#!/item-list">Show All</a></li>
+        <li><a ng-show="isLoggedIn" ng-href="#!/item/newItem">Add Task</a></li>
+        <li><a ng-show="!isLoggedIn">Login</a></li>
+        <li><a ng-show="isLoggedIn" ng-click="logout()" >Logout</a></li>
+    </ul>
+    <i class='dropdown-button material-icons show-on-medium-and-down hide-on-med-and-up right' data-beloworigin="true" href='#' data-activates='dropdownMobile'>menu</i>
+    <a href="#!" class="brand-logo show-on-medium-and-down hide-on-med-and-up left">Logo</a>
+    <ul id="dropdownMobile" class="right nav__links dropdown-content">
+            <li><a ng-show="isLoggedIn" ng-href="#!/item-list">User Profile</a></li> -->
+            <!-- <li><a ng-show="isLoggedIn" ng-href="#!/item/newItem">Add Task</a></li> -->
+            <!-- <li><a ng-show="!isLoggedIn">Login</a></li>
+            <li><a ng-show="isLoggedIn" ng-click="logout()" >Logout</a></li>
+    </ul>
+  </div> -->
+
+
