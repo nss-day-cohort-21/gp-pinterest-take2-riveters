@@ -1,12 +1,12 @@
 "use strict";
 
-// console.log("Getting all the stuff controller, yo!");
+console.log("test controller, yo!");
 
-app.controller("getController", function ($scope, UserBoards) {
+app.controller("testFactory", function ($scope, UserBoards) {
     UserBoards.getAllPins()
         .then(function (pinCollection) {
             let pinArray = [];
-            // console.log(pinArray);
+            console.log(pinArray);
             let pinKeys = Object.keys(pinCollection);
             pinKeys.forEach((item) => {
                 pinArray.push(pinCollection[item]);
@@ -18,7 +18,7 @@ app.controller("getController", function ($scope, UserBoards) {
         UserBoards.getAllBoards()
         .then(function (boardCollection) {
             let boardArray = [];
-            // console.log(boardArray);
+            console.log(boardArray);
             let boardKeys = Object.keys(boardCollection);
             boardKeys.forEach((item) => {
                 boardArray.push(boardCollection[item]);
