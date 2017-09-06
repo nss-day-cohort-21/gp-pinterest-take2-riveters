@@ -19,6 +19,7 @@ app.controller("addPin", function ($scope, $location, UserBoards, authFactory) {
         };
     
         $scope.submitPin = function () {
+            console.log("WHYYY");
             UserBoards.addNewPin($scope.pin)
                 .then((data) => {
                     $location.url("/pin-view");
