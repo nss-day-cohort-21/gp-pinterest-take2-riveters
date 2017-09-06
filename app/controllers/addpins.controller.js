@@ -2,15 +2,15 @@
 
 console.log('Add Pins.controller');
 
-app.controller("addPin", function ($scope, $location, UserBoards) {
+app.controller("addPin", function ($scope, $location, UserBoards, authFactory) {
     
         $scope.title = "New Pin";
         $scope.submitButtonText = "Add New Pin";
-        // let user = userFactory.getCurrentUser();
+        let user = authFactory.getCurrentUser();
     
         $scope.pin = {
             title: "",
-            uid: "user",
+            uid: user,
             img: "",
             description: "",
             tags: "",

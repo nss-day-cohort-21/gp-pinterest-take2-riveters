@@ -10,7 +10,7 @@ app.controller("addBoard", function ($scope, $location, UserBoards, authFactory)
     
         $scope.board = {
             title: "",
-            uid: "user"
+            uid: user
         };
     
         $scope.submitBoard = function () {
