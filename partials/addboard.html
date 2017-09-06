@@ -1,5 +1,12 @@
-<section>
-<article class="addboard">
-    This is the add board partial
-</article>
-</section>
+<h3>{{title}}</h3>
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="title here" id="title" type="text" class="validate" ng-model="board.title">
+          <label for="title">title</label>
+        </div>
+        </div>
+        <a class="waves-effect waves-light btn" class="btn btn-default" ng-click="submitTask()">{{submitButtonText}}</a>
+        </form>
+                </div>

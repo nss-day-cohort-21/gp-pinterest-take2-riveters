@@ -19,6 +19,4 @@ app.controller("addBoard", function ($scope, $location, UserBoards, authFactory)
                     $location.url("/board-view");
                 });
         };
-    });
-
-
+ });
