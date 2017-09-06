@@ -1,3 +1,3 @@
 'use strict';
 
-console.log("pins.controller");
+// console.log("pins.controller");

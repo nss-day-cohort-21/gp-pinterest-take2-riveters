@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('Add Pins.controller');
+// console.log('Add Pins.controller');
 
 app.controller("addPin", function ($scope, $location, UserBoards, authFactory) {
     
@@ -19,7 +19,7 @@ app.controller("addPin", function ($scope, $location, UserBoards, authFactory) {
         };
     
         $scope.submitPin = function () {
-            UserBoards.addPin($scope.pin)
+            UserBoards.addNewPin($scope.pin)
                 .then((data) => {
                     $location.url("/pin-view");
                 });

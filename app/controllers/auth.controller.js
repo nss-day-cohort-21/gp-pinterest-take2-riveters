@@ -1,5 +1,5 @@
 "use strict";
-console.log("auth controller, YO!");
+// console.log("auth controller, YO!");
 
 app.controller("authCtrl", function ($scope, $window, authFactory, $location) {
 
@@ -32,10 +32,11 @@ app.controller("authCtrl", function ($scope, $window, authFactory, $location) {
 
     $scope.loginGoogle = () => {
         console.log("you clicked on google login");
-
         authFactory.authWithProvider()
             .then((result) => {
                 let user = result.user.uid;
+                console.log("USER", user);
+                console.log("USER RESULT", result);
                 $location.path("/board-view");
                 $scope.apply();
             }).catch((error) => {

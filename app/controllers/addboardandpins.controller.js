@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('addboardandpins.controller');
+// console.log('addboardandpins.controller');
 
 function addBoard(){
 
