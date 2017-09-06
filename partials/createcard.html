@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col s12 m7">
+      <div ng-repeat="item in pins" class="card">
+        <div class="card-image">
+          <img src="{{pin.img}}">
+          <span class="card-title">{{pin.title}}</span>
+        </div>
+        <div class="card-content">
+          <p>{{pin.description}}</p>
+        </div>
+        <div class="card-action">
+          <a href="#">{{pin.url}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
