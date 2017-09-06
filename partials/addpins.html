@@ -1,5 +1,5 @@
 <!-- logo -->
-<!-- drop down menu of your boards -->
+<h3>{{title}}</h3>
 
 
   <!-- Dropdown Trigger -->
@@ -15,29 +15,29 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
-            <input id="title" type="text" class="validate">
+            <input id="title" type="text" class="validate" ng-model="pin.title">
             <label for="title">Title</label>
           </div>
         <div class="input-field col s6">
-          <input id="URL" type="text" class="validate">
+          <input id="URL" type="text" class="validate" ng-model="pin.url">
           <label for="URL">URL</label>
         </div>
         <div class="input-field col s6">
-            <input id="imageUrl" type="text" class="validate">
+            <input id="imageUrl" type="text" class="validate" ng-model="pin.img">
             <label for="imageUrl">Image URL</label>
         </div>
         <div class="input-field col s6">
-            <input id="description" type="text" class="validate">
+            <input id="description" type="text" class="validate" ng-model="pin.description">
             <label for="description">Description</label>
           </div>
           <div class="input-field col s6">
-            <input id="tags" type="text" class="validate">
+            <input id="tags" type="text" class="validate" ng-model="pin.tags">
             <label for="tags">Tags</label>
           </div>
       </div>
     </form>
   </div>
-  <button id="create">Create</button>
+  <button id="create" ng-click="submitPin()">{{submitButtonText}}</button>
 <section>
     <article>
         This is the add pins partial
