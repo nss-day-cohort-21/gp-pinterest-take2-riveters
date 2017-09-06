@@ -1,5 +1,7 @@
-app/creds
+app/creds/*
+app/controllers/test.controller.js
 css/
 lib/node_modules/*
 lib/.sass-cache/*
 .DS_Store
+partials/user.html
