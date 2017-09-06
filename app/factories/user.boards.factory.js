@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('USER BOARDS');
+// console.log('USER BOARDS');
 
 app.factory("UserBoards", function ($q, $http, FBCreds) {
 
@@ -11,7 +11,7 @@ app.factory("UserBoards", function ($q, $http, FBCreds) {
             // ${FBCreds.databaseURL}/items.json?orderBy="uid"&equalTo="${user}"
                 .then((pinObject) => {
                     let pinCollection = pinObject.data;
-                    console.log("pinCollection", pinCollection);
+                    // console.log("pinCollection", pinCollection);
                     Object.keys(pinCollection).forEach((key) => {
                         pinCollection[key].id = key;
                         pins.push(pinCollection[key]);
@@ -31,10 +31,10 @@ app.factory("UserBoards", function ($q, $http, FBCreds) {
             // ${FBCreds.databaseURL}/items.json?orderBy="uid"&equalTo="${user}"
                 .then((boardObject) => {
                     let boardCollection = boardObject.data;
-                    console.log("boardCollection", boardCollection);
+                    // console.log("boardCollection", boardCollection);
                     Object.keys(boardCollection).forEach((key) => {
                         boardCollection[key].id = key;
-                        console.log("KEY", key);
+                        // console.log("KEY", key);
                         boards.push(boardCollection[key]);
                     });
                     resolve(boards);
@@ -70,6 +70,7 @@ app.factory("UserBoards", function ($q, $http, FBCreds) {
                 console.log("error", errorCode, errorMessage);
             });
     };
+
 
     // removeFromFB: function(id) {
     //     fire.getAllPins()

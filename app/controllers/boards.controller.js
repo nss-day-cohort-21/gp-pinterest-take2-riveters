@@ -1,6 +1,6 @@
 'use strict';
 
-console.log("boards.controller");
+// console.log("boards.controller");
 
 app.controller("BoardsController", function($scope, authFactory){
 
