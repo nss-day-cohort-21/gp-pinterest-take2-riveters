@@ -10,9 +10,12 @@
 //   padding-left: 10px !important;
 // }
 
+.brand-logo {
+  position: absolute;
+  margin-right: 1px;
+  left: 5px;
+}
 
-// .brand-logo {
-//   position: absolute;
-//   margin-right: 1px;
-//   left: 5px;
-// }
+.card .card-image .card-title {
+ padding: 4px;
+}
