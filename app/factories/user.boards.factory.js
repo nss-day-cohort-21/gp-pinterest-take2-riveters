@@ -2,16 +2,15 @@
 
 // console.log('USER BOARDS');
 
-app.factory("UserBoards", function ($q, $http, FBCreds) {
-
+app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
+    
     const getAllPins = function (user) {
         let pins = [];
         return $q((resolve, reject) => {
-            $http.get(`${FBCreds.databaseURL}/pins.json`)
-            // ${FBCreds.databaseURL}/items.json?orderBy="uid"&equalTo="${user}"
+            $http.get(`${FBCreds.databaseURL}/pins.json?orderBy="uid"&equalTo="${user}"`)
                 .then((pinObject) => {
                     let pinCollection = pinObject.data;
-                    // console.log("pinCollection", pinCollection);
+                    console.log("pinCollection", pinCollection);
                     Object.keys(pinCollection).forEach((key) => {
                         pinCollection[key].id = key;
                         pins.push(pinCollection[key]);
@@ -26,15 +25,14 @@ app.factory("UserBoards", function ($q, $http, FBCreds) {
 
     const getAllBoards = function (user) {
         let boards = [];
+        console.log(user);
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/board.json?orderBy="uid"&equalTo="${user}"`)
-            // ${FBCreds.databaseURL}/items.json?orderBy="uid"&equalTo="${user}"
                 .then((boardObject) => {
                     let boardCollection = boardObject.data;
-                    // console.log("boardCollection", boardCollection);
+                    console.log("boardCollection", boardCollection);
                     Object.keys(boardCollection).forEach((key) => {
                         boardCollection[key].id = key;
-                        // console.log("KEY", key);
                         boards.push(boardCollection[key]);
                     });
                     resolve(boards);

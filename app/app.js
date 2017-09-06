@@ -20,8 +20,11 @@ let isAuth = (authFactory) => new Promise((resolve, reject) => {
 app.config(($routeProvider) => {
     $routeProvider
         .when('/', {
-            templateUrl: 'partials/addboard.html',
-            controller: 'addBoard',
+            // templateUrl: 'partials/addpins.html',
+            // controller: 'addPin',
+            // resolve: {isAuth}
+            templateUrl: 'partials/user.pins.html',
+            controller: 'pinsController',
             resolve: {isAuth}
         })
         .when('/login', {
