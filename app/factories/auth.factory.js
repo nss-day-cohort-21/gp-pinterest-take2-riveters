@@ -2,11 +2,11 @@
 
 console.log("auth.factory");
 
-app.factory("userFactory", function ($q, $http) {
+app.factory("authFactory", function ($q, $http) {
     let currentUser = null;
 
     const isAuthenticated = function () {
-        console.log("userFactory: isAuthenticated");
+        console.log("authFactory: isAuthenticated");
         return new Promise((resolve, reject) => {
             firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
@@ -23,9 +23,7 @@ app.factory("userFactory", function ($q, $http) {
     const getCurrentUser = function () {
         return currentUser;
     };
-    // const loginGoogle = function(){
 
-    // };
     const logIn = function (userObj) {
         return firebase.auth().signInWithEmailAndPassword(userObj.email, userObj.password)
             .catch(function (error) {
