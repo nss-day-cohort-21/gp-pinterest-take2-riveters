@@ -25,7 +25,7 @@ app.config(($routeProvider) => {
             resolve: {isAuth}
         })
         .when('/login', {
-            templateUrl: 'partials/user.html',
+            templateUrl: 'partials/loggedout.html',
             controller: 'authCtrl'
         })
         .when('/pin-view', {
