@@ -14,11 +14,9 @@ app.controller("addBoard", function ($scope, $location, UserBoards, authFactory)
         };
     
         $scope.submitBoard = function () {
-            UserBoards.addBoard($scope.board)
+            UserBoards.addNewBoard($scope.board)
                 .then((data) => {
                     $location.url("/board-view");
                 });
         };
-    });
-
-
+ });
