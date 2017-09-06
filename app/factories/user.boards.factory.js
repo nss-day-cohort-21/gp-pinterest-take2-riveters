@@ -4,7 +4,7 @@
 
 app.factory("UserBoards", function ($q, $http, FBCreds) {
 
-    const getAllPins = function () {
+    const getAllPins = function (user) {
         let pins = [];
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/pins.json`)
