@@ -71,6 +71,23 @@ app.factory("UserBoards", function ($q, $http, FBCreds) {
             });
     };
 
+    // removeFromFB: function(id) {
+    //     fire.getAllPins()
+    //     .then((data) => {
+    //       let keys = Object.keys(data);
+    //       let correctUgly;
+    //       $(keys).each((index, item) => {
+    //         let eachPin = data[item];
+    //         if (eachPin.movieID === id) {
+    //           correctUgly = keys[index];
+    //         }
+    //       });
+    //       fdr.ref(`/${correctUgly}`).remove();
+    //     });
+    //   };
+
+
+
 function addBoard(){
 
 }

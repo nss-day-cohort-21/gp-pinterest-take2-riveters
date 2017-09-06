@@ -15,13 +15,13 @@
         </form>
     </div>
     <!-- register button -->
-    <a class="waves-effect waves-light btn-large">Register</a>
-
+    <a ng-click="register()" class="waves-effect waves-light btn-large">Register</a>
+    <button ng-click="login()" class="waves-effect waves-light btn-large">Login</button>
     <p>OR</p>
     <!-- button continue with google -->
     <!-- button login -->
     <div class="col-xs-6">
-        <h4>Login with Google</h4>
-        <button ng-click="loginGoogle()" class="btn btn-info">Sign In</button>
+        <a href="#" ng-click="loginGoogle()"><img src="app/assets/images/googleLogin.png"></a> 
+        <!-- <button ng-click="loginGoogle()" class="btn btn-info">Sign In</button> -->
     </div>
 </div>
