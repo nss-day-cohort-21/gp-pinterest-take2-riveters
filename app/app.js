@@ -21,7 +21,7 @@ app.config(($routeProvider) => {
     $routeProvider
         .when('/', {
             templateUrl: 'partials/user.pins.html',
-            controller: 'getController',
+            controller: 'addPin',
             resolve: {isAuth}
         })
         .when('/login', {

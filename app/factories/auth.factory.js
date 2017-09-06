@@ -14,8 +14,11 @@ app.factory("authFactory", function ($q, $http, FBCreds) {
                     currentUser = user.uid;
                     let userName = user.displayName;
                     let userEmail = user.email;
+                    let userPhoto = user.photoURL;
                     console.log("user", user.uid);
                     console.log("userName", userName);
+                    console.log("useremail", userEmail);
+                    console.log("userPhoto", userPhoto);
                     resolve(true);
                 } else {
                     resolve(false);

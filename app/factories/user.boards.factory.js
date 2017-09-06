@@ -24,10 +24,10 @@ app.factory("UserBoards", function ($q, $http, FBCreds) {
         });
     };
 
-    const getAllBoards = function () {
+    const getAllBoards = function (user) {
         let boards = [];
         return $q((resolve, reject) => {
-            $http.get(`${FBCreds.databaseURL}/board.json`)
+            $http.get(`${FBCreds.databaseURL}/board.json?orderBy="uid"&equalTo="${user}"`)
             // ${FBCreds.databaseURL}/items.json?orderBy="uid"&equalTo="${user}"
                 .then((boardObject) => {
                     let boardCollection = boardObject.data;
