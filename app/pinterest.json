@@ -1,21 +1,62 @@
 {
-    "board" : {
-        "uid":"12345",
-        "title":"",
-        "boardid":""
+    "board": {
+        "-Ksz51q_BB5x_SlNuqdO": {
+            "title": "Some BOARD Title 1",
+            "uid": "KGCIrcyxnMSXXp1ayKpXnRGOoUB3"
+        },
+        "-KszD5oWTGIVFVQtNeeS": {
+            "title": "Some BOARD Title 2",
+            "uid": "BTdU2dvyLXafsVeIvm8dcDc8Wp23"
+        },
+        "-KtEcsfJ1AnWdMoikza8": {
+            "title": "Some BOARD Title 3",
+            "uid": "VBguQouztVh5mHOcjjIGjl02scq1"
+        }
     },
-    "pins" : {
-        "uid": "",
-        "boardid":"",
-        "url":"",
-        "title":"",
-        "img":"",
-        "description":"",
-        "tags":""
+    "pins": {
+        "-KszuqdO": {
+            "title": "Some PIN Title 1",
+            "uid": "KGCIrcyxnMSXXp1ayKpXnRGOoUB3",
+            "img": "",
+            "description": "",
+            "tags": "",
+            "url": "",
+            "boardid": "-Ksz51q_BB5x_SlNuqdO"
+        },
+        "-KszD5tNeeS": {
+            "title": "Some PIN Title 2",
+            "uid": "BTdU2dvyLXafsVeIvm8dcDc8Wp23",
+            "img": "",
+            "description": "",
+            "tags": "",
+            "url": "",
+            "boardid": "-KszD5oWTGIVFVQtNeeS"
+        },
+        "-KtEikza8": {
+            "title": "Some PIN Title 3",
+            "uid": "VBguQouztVh5mHOcjjIGjl02scq1",
+            "img": "",
+            "description": "",
+            "tags": "",
+            "url": "",
+            "boardid": "-KtEcsfJ1AnWdMoikza8"
+        }
     },
-    "users" : {
-        "uid": "",
-        "name":"",
-        "email":""
+    "users": {
+        "1": {
+            "name": "USER 1",
+            "uid": "KGCIrcyxnMSXXp1ayKpXnRGOoUB3",
+            "email": ""
+        },
+        "2": {
+            "name": "USER 2",
+            "uid": "BTdU2dvyLXafsVeIvm8dcDc8Wp23",
+            "email": ""
+        },
+        "3": {
+            "name": "USER 3",
+            "uid": "VBguQouztVh5mHOcjjIGjl02scq1",
+            "email": ""
+        }
     }
-  }
+}

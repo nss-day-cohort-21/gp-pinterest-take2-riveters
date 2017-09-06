@@ -2,12 +2,12 @@
 
 console.log("navbar.controller");
 
-app.controller("NavBar", function($scope, $window, $routeParams, userFactory){
+app.controller("navCtrl", function($scope, $window, $routeParams, authFactory){
 
     $scope.isLoggedIn = false;
     
     $scope.logout = () => {
-        userFactory.logOut();
+        authFactory.logOut();
       };
 
     firebase.auth().onAuthStateChanged(function(user) {

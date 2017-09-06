@@ -1,11 +1,75 @@
 'use strict';
 
-console.log('user.boards');
+console.log('USER BOARDS');
 
-app.factory("userFactory", function ($q, $http) {
-    
+app.factory("UserBoards", function ($q, $http, FBCreds) {
 
+    const getAllPins = function () {
+        let pins = [];
+        return $q((resolve, reject) => {
+            $http.get(`${FBCreds.databaseURL}/pins.json`)
+            // ${FBCreds.databaseURL}/items.json?orderBy="uid"&equalTo="${user}"
+                .then((pinObject) => {
+                    let pinCollection = pinObject.data;
+                    console.log("pinCollection", pinCollection);
+                    Object.keys(pinCollection).forEach((key) => {
+                        pinCollection[key].id = key;
+                        pins.push(pinCollection[key]);
+                    });
+                    resolve(pins);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    };
 
+    const getAllBoards = function () {
+        let boards = [];
+        return $q((resolve, reject) => {
+            $http.get(`${FBCreds.databaseURL}/board.json`)
+            // ${FBCreds.databaseURL}/items.json?orderBy="uid"&equalTo="${user}"
+                .then((boardObject) => {
+                    let boardCollection = boardObject.data;
+                    console.log("boardCollection", boardCollection);
+                    Object.keys(boardCollection).forEach((key) => {
+                        boardCollection[key].id = key;
+                        console.log("KEY", key);
+                        boards.push(boardCollection[key]);
+                    });
+                    resolve(boards);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    };
+
+    const addNewPin = function (obj) {
+        let newObj = JSON.stringify(obj);
+        return $http.post(`${FBCreds.databaseURL}/pins.json`, newObj)
+            .then((data) => {
+                console.log("data", data);
+                return data;
+            }, (error) => {
+                let errorCode = error.code;
+                let errorMessage = error.message;
+                console.log("error", errorCode, errorMessage);
+            });
+    };
+
+    const addNewBoard = function (obj) {
+        let newObj = JSON.stringify(obj);
+        return $http.post(`${FBCreds.databaseURL}/board.json`, newObj)
+            .then((data) => {
+                console.log("data", data);
+                return data;
+            }, (error) => {
+                let errorCode = error.code;
+                let errorMessage = error.message;
+                console.log("error", errorCode, errorMessage);
+            });
+    };
 
 function addBoard(){
 
@@ -23,13 +87,13 @@ function deleteBoard(){
 
 }
 
-function getAllPins(){
+// function getAllPins(){
 
-}
+// }
 
-function getAllBoards(){
+// function getAllBoards(){
 
-}
+// }
 
 function singleBoard(){
 
@@ -38,4 +102,5 @@ function singleBoard(){
 function singlePin(){
     
 }
+return{getAllPins, getAllBoards, addNewPin, addNewBoard};
 });
