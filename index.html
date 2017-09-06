@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="PinterestApp">
     <head>
         <title>PUT TITLE HERE!</title>
         <!-- ///////////STYLESHEETS START/////////// -->
@@ -13,23 +13,13 @@
 
     <body>
         <!-- ///////////NAVIGATION START/////////// -->
-        <div class="navbar-fixed">
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo">Logo</a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="sass.html">Blog List</a></li>
-                        <li><a href="badges.html">Add Blog Entry</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        <div ng-include="'partials/navbar.html'"></div>
         <!-- ///////////NAVIGATION END/////////// -->
 
         <!-- ///////////CONTAINER START/////////// -->
         <main>
             <div class="container">
-                This is the body
+                <div ng-view></div>
 
             </div>
         </main>
@@ -39,7 +29,7 @@
         <footer class="page-footer">
             <div class="footer-copyright">
                 <div class="container">
-                    © 2017 Built by Dr. T
+                    © 2017 Built by The Riveters
                 </div>
             </div>
         </footer>
@@ -61,19 +51,20 @@
         <!-- factories -->
         <script src="app/factories/auth.factory.js"></script>
         <script src="app/factories/user.boards.factory.js"></script>
-        <script src="app/factories/filter.factory.js"></script>
-        
+        <!-- <script src="app/factories/filter.factory.js"></script> -->
+
         <!--controllers -->
         <script src="app/controllers/navbar.controller.js"></script>
+        <script src="app/controllers/test.controller.js"></script> 
         <script src="app/controllers/addboardandpins.controller.js"></script>
-        <script src="app/controllers/addboardandpins.controller.js"></script>
+        <script src="app/controllers/getBoardsandPins.controller.js"></script>
         <script src="app/controllers/auth.controller.js"></script>
-        <script src="app/controllers/boards.controller.js"></script>
-        
-        
-        
-        
-        
+        <!-- <script src="app/controllers/boards.controller.js"></script> -->
+
+
+
+
+
         <!-- ///////////END SCRIPTS/////////// -->
     </body>
 </html>
