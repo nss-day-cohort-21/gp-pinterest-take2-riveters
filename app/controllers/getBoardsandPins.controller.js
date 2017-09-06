@@ -4,9 +4,9 @@
 
 app.controller("getController", function ($scope, UserBoards) {
 
-    $scope.boards = [];
-    $scope.pins = [];
-    let user = authFactory.getCurrentUser();
+    // $scope.boards = [];
+    // $scope.pins = [];
+    // let user = authFactory.getCurrentUser();
 
 const showAllPins = function() {
     UserBoards.getAllPins()
@@ -35,3 +35,5 @@ const showAllBoards = function() {
             $scope.board = boardArray;
         });
 };
+
+});
