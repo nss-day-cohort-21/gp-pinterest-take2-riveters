@@ -1,12 +1,17 @@
-<h3>{{title}}</h3>
-<div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="title here" id="title" type="text" class="validate" ng-model="board.title">
-          <label for="title"></label>
-        </div>
-        </div>
-        <a class="waves-effect waves-light btn" class="btn btn-default" ng-click="submitBoard()">{{submitButtonText}}</a>
-        </form>
-                </div>
+
+<div id="modal1" class="modal">
+<div class="modal-content">
+  <h3>{{title}}</h3>
+  <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="title here" id="title" type="text" class="validate" ng-model="board.title">
+            <label for="title"></label>
+          </div>
+          </div>
+          <a class="waves-effect waves-light btn" class="btn btn-default" ng-click="submitBoard()">{{submitButtonText}}</a>
+          </form>
+  </div>
+</div>
+</div>

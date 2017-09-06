@@ -20,8 +20,8 @@ let isAuth = (authFactory) => new Promise((resolve, reject) => {
 app.config(($routeProvider) => {
     $routeProvider
         .when('/', {
-            templateUrl: 'partials/addboard.html',
-            controller: 'addBoard',
+            templateUrl: 'partials/user.boards.html',
+            controller: 'getController',
             resolve: {isAuth}
         })
         .when('/login', {
@@ -50,3 +50,4 @@ app.run(($location, FBCreds) => {
     };
     firebase.initializeApp(authConfig);
 });
+
