@@ -1,6 +1,6 @@
 'use strict';
 
-// console.log("pins.controller");
+console.log("pins.controller");
 
 app.controller("pinsController", function($scope, authFactory, UserBoards){
 

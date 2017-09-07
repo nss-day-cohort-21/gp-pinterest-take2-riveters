@@ -28,11 +28,21 @@ app.config(($routeProvider) => {
             controller: 'BoardsController',
             resolve: {isAuth}
         })
-        // .when('/', {
+         // .when('/', {
         //     templateUrl: 'partials/user.pins.html',
         //     controller: 'pinsController',
         //     resolve: {isAuth}
         // })
+        .when('/profile', {
+            templateUrl: 'partials/user.boards.html',
+            controller: 'BoardsController',
+            resolve: {isAuth}
+         })
+        .when('/pin-view', {
+            templateUrl: 'partials/user.pins.html',
+            controller: 'pinsController',
+            resolve: {isAuth}
+        })
         .when('/board-view', {
             templateUrl: '',
             controller: 'getController',
@@ -50,3 +60,4 @@ app.run(($location, FBCreds) => {
     };
     firebase.initializeApp(authConfig);
 });
+
