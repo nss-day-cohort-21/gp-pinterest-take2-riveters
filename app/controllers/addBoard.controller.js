@@ -2,7 +2,7 @@
 
 console.log('Add Board.controller');
 
-app.controller("addBoard", function ($scope, $location, UserBoards, authFactory) {
+app.controller("addBoard", function ($scope, $location, UserBoards, authFactory, $route) {
     
         $scope.title = "New Board";
         $scope.submitButtonText = "Add New Board";
@@ -18,7 +18,8 @@ app.controller("addBoard", function ($scope, $location, UserBoards, authFactory)
         $scope.submitBoard = function () {
             UserBoards.addNewBoard($scope.board)
                 .then((data) => {
-                    $location.url("/");
+                    $location.url("#!/");
+                    $route.reload();
                 });
         };
  });
