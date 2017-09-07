@@ -1,10 +1,11 @@
 <div class="row">
+        <div class="col s4" ng-repeat="item in userDeets">
+                <div id="userPic"><img class="userImage" ng-src={{item.userPhoto}}></div>
+            </div>
     <div class="col s8" ng-repeat="item in userDeets">
         <h4>{{item.userName}}</h4>
     </div>
-    <div class="col s4" ng-repeat="item in userDeets">
-        <div id="userPic"><img ng-src={{item.userPhoto}}></div>
-    </div>
+    
 </div>
 
 <div class="row">
