@@ -6,7 +6,7 @@ app.controller("BoardsController", function($scope, authFactory, UserBoards){
 
     $scope.boards = [];
     let user = authFactory.getCurrentUser();
-    
+
     const showAllBoards = function () {
         UserBoards.getAllBoards(user)
             .then((boards) => {
@@ -22,6 +22,15 @@ app.controller("BoardsController", function($scope, authFactory, UserBoards){
         // console.log("$$$$$pulledInfo", pulledInfo);
         // console.log("$scope.userDeets", $scope.userDeets);
     };
+
+    // //function to grab board ID when clicked, redirect to all pins
+    // $scope.myFunc = [];
+    // let myFuncClickboard = function () {
+    //     .then((board) => {
+    //         $scope.pin
+    //     })
+    // }
+
 
     // $scope.allBoardPins = [];
     // let thosePinsareBoard = function(){
