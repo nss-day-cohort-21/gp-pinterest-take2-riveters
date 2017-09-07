@@ -9,7 +9,7 @@ app.controller("pinsController", function($scope, authFactory) {
 
     const showAllPins = function() {
         authFactory.getAllPins(user)
-            .then((boards) => {
+            .then((pins) => {
                 console.log("showAllPins", pins);
                 $scope.pins = pins;
             });
