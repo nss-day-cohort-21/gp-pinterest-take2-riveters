@@ -2,7 +2,7 @@
 
 console.log("pins.controller");
 
-app.controller("pinsController", function($scope, authFactory, UserBoards){
+app.controller("pinsController", function($scope, authFactory, UserBoards, $routeParams){
 
     $scope.pins = [];
     let user = authFactory.getCurrentUser();
@@ -15,5 +15,10 @@ app.controller("pinsController", function($scope, authFactory, UserBoards){
             });
     };
 
+    const getPinUglyId = function(){
+        console.log("$$$$$Route", $routeParams.itemId);
+    };
+
+    getPinUglyId();
     showAllPins();
 });
