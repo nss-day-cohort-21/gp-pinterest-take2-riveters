@@ -2,10 +2,11 @@
 
 // console.log('Add Pins.controller');
 
-app.controller("addPin", function ($scope, $location, UserBoards, authFactory) {
+app.controller("addPin", function ($scope, $location, $routeParams, UserBoards, authFactory, $route) {
     
         $scope.title = "New Pin";
         $scope.submitButtonText = "Add New Pin";
+
         let user = authFactory.getCurrentUser();
     
         $scope.pin = {
@@ -15,14 +16,15 @@ app.controller("addPin", function ($scope, $location, UserBoards, authFactory) {
             description: "",
             tags: "",
             url: "",
-            boardid: ""
+            boardid: $routeParams.itemId
         };
     
         $scope.submitPin = function () {
             console.log("WHYYY");
             UserBoards.addNewPin($scope.pin)
                 .then((data) => {
-                    $location.url("/pin-view");
+                    $location.url("#!/board/{{item.id}}");
+                    $route.reload();
                 });
         };
     });

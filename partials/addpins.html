@@ -1,40 +1,40 @@
 <!-- logo -->
 <h3>{{title}}</h3>
 
-  <!-- Dropdown Trigger -->
-  <a class='dropdown-button btn' href='#' data-activates='dropdown1'>My Boards!</a>
-  
-    <!-- Dropdown Structure -->
-    <ul id='dropdown1' class='dropdown-content'>
+<!-- Dropdown Trigger -->
+<!-- <a class='dropdown-button btn' href='#' data-activates='dropdown1'>My Boards!</a> -->
+
+<!-- Dropdown Structure -->
+<!-- <ul id='dropdown1' class='dropdown-content'>
       <li><a href="#!">one</a></li>
       <li><a href="#!">two</a></li>
       <li><a href="#!">three</a></li>
-    </ul>
+    </ul> -->
 <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-            <input id="title" type="text" class="validate" ng-model="pin.title">
-            <label for="title">Title</label>
-          </div>
-        <div class="input-field col s6">
-          <input id="URL" type="text" class="validate" ng-model="pin.url">
-          <label for="URL">URL</label>
-        </div>
-        <div class="input-field col s6">
-            <input id="imageUrl" type="text" class="validate" ng-model="pin.img">
-            <label for="imageUrl">Image URL</label>
-        </div>
-        <div class="input-field col s6">
-            <input id="description" type="text" class="validate" ng-model="pin.description">
-            <label for="description">Description</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="tags" type="text" class="validate" ng-model="pin.tags">
-            <label for="tags">Tags</label>
-          </div>
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="title" type="text" class="validate" ng-model="pin.title">
+        <label for="title">Title</label>
       </div>
-    </form>
-  </div>
-  <button id="create" ng-click="submitPin()">{{submitButtonText}}</button>
-  <a class="waves-effect waves-light btn" class="btn btn-default" href="#" ng-click="$window.history.back()">Cancel</a>
+      <div class="input-field col s6">
+        <input id="URL" type="text" class="validate" ng-model="pin.url">
+        <label for="URL">URL</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="imageUrl" type="text" class="validate" ng-model="pin.img">
+        <label for="imageUrl">Image URL</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="description" type="text" class="validate" ng-model="pin.description">
+        <label for="description">Description</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="tags" type="text" class="validate" ng-model="pin.tags">
+        <label for="tags">Tags</label>
+      </div>
+    </div>
+  </form>
+</div>
+<button id="create" ng-click="submitPin()">{{submitButtonText}}</button>
+<a class="waves-effect waves-light btn" class="btn btn-default" href="#" ng-click="$window.history.back()">Cancel</a>
