@@ -23,26 +23,16 @@ app.controller("BoardsController", function($scope, authFactory, UserBoards){
         // console.log("$scope.userDeets", $scope.userDeets);
     };
 
-    // //function to grab board ID when clicked, redirect to all pins
-    // $scope.myFunc = [];
-    // let myFuncClickboard = function () {
-    //     .then((board) => {
-    //         $scope.pin
-    //     })
-    // }
-
-
-    // $scope.allBoardPins = [];
-    // let thosePinsareBoard = function(){
-    //     UserBoards.getBoardPins()
-    //     .then((data)=>{
-    //         $scope.allBoardPins = data;
-    //         console.log("$scope.allBoardPins", $scope.allBoardPins);
-    //     });
-    // };
+    $scope.deleteBoard = function(boardId){
+        console.log("heeeeeeeeeyyyyyyyy");
+            UserBoards.deleteBoard(boardId)
+            .then( (irrelevant) => {
+            
+                $route.reload();
+            });
+        };
 
     showAllBoards();
     getThoseDeets();
-    // thosePinsareBoard();
 
 });
