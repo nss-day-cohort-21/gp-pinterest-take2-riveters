@@ -13,7 +13,6 @@ button {
     width: 204px;
 }
 
-
 #search {
     margin-right: 500px;
 }
@@ -37,6 +36,41 @@ button {
 }
 
 #rivetIt{
-    margin-top:5px;
-    border-top: 1px solid black;
+    margin-top:10px;
+    border-top: 1px solid lightgray;
+    padding-top:10px;
+}
+.loginTable{
+    border: #F12819 3px solid;
+    border-radius: 20px;
+    padding: 40px;
+    margin:20px auto;
+}
+
+input.loginInput{
+    background: white;
+}
+
+.waves-effect.waves-light.btn-large{
+    background: #0D2953;
+    width: 400px;
+}
+
+.waves-effect.waves-light.btn-large:hover{
+    background: #D17451;
+}
+
+.userImage{
+    width: 200px;
+}
+
+.headingTitle{
+    margin: 40px;
+}
+
+.nav-wrapper, .page-footer{
+    background: #BD081C;
+}
+.brand-logo.left img{
+    width: 130px;
 }
