@@ -1,12 +1,9 @@
-<div class="row">
-    <div class="col s8" ng-repeat="item in userDeets">
-        <h4>{{item.userName}}</h4>
-    </div>
-    <div class="col s4" ng-repeat="item in userDeets">
-        <div id="userPic"><img ng-src={{item.userPhoto}}></div>
-    </div>
-</div>
 
+    <div class="col s12" ng-repeat="item in userDeets">
+            <center><div id="userPic"><img class="userImage" ng-src={{item.userPhoto}}></div>
+        <h4>{{item.userName}}'s Rivet Boards</h4></center>
+    </div>
+   
 <div class="row">
     <div class="col s12 m4">
         <div class="card-panel hoverable card">

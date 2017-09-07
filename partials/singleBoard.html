@@ -1,6 +1,7 @@
+
 <input class="form-control mr-sm-2" type="text" placeholder="Search" ng-model="searchText">
-<h4>BOARD: {{allBoardPinsName}}</h4>
-NEED TO ADD PINS ASSOCIATED WITH THIS BOARD ID
+
+<center><h2 class="headingTitle">RIVET IT: {{allBoardPinsName}}</h2></center>
 <div class="row">
     <div class="col s12 m4">
         <div class="card-panel hoverable card">
@@ -15,6 +16,7 @@ NEED TO ADD PINS ASSOCIATED WITH THIS BOARD ID
     </div>
     <!-- </div>
     <div class="row"> -->
+
     <div class="col s12 m4" ng-repeat="item in allBoardPins | filter:searchText">
         <div id="" class="card-panel hoverable card">
             <div class="card-image">
@@ -26,6 +28,7 @@ NEED TO ADD PINS ASSOCIATED WITH THIS BOARD ID
                 <p>{{item.description}}</p>
                 <p><a href="{{item.url}}" target="_blank">Visit the Website</a></p>
                 <!-- <div id="rivetIt"><a href=""><i class="material-icons">settings</i>Add A Rivet!</a></div> -->
+
             </div>
         </div>
     </div>
