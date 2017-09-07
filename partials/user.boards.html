@@ -1,9 +1,12 @@
+<div class="col s12" ng-repeat="item in userDeets">
+    <center>
+        <div id="userPic"><img class="userImage" ng-src={{item.userPhoto}}></div>
 
-    <div class="col s12" ng-repeat="item in userDeets">
-            <center><div id="userPic"><img class="userImage" ng-src={{item.userPhoto}}></div>
-        <h4>{{item.userName}}'s Rivet Boards</h4></center>
-    </div>
-   
+        <h4>{{item.userName}}'s Rivet Boards</h4>
+    </center>
+</div>
+<input class="form-control mr-sm-2" type="text" placeholder="Search" ng-model="searchText">
+
 <div class="row">
     <div class="col s12 m4">
         <div class="card-panel hoverable card">
@@ -18,7 +21,7 @@
     </div>
     <!-- </div>
 <div class="row"> -->
-    <div class="col s12 m4" ng-repeat="item in boards">
+    <div class="col s12 m4" ng-repeat="item in boards | filter:searchText">
         <div id="" class="card-panel hoverable card">
             <div class="card-image">
                 <a href="#!/board/{{item.id}}"><img ng-src="{{item.image}}"></a>
