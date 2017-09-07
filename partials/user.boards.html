@@ -1,64 +1,26 @@
-
-<div>
-<section class="myBoards">
-    <article>
-        <div class="row">
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-image">
-                    <div class="col-xs-6">
-                            <a href="#modal1"><img src="https://www.clker.com/cliparts/6/z/Y/C/2/s/orange-plus-sign.svg"></a> 
-                            <!-- <button ng-click="loginGoogle()" class="btn btn-info">Sign In</button> -->
-                        </div>
-              <img ng-src="" src="{{img.url}}">
-              <span class="card-title">{{pin.title}}</span>
-              <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-            </div>
-            <div class="card-content">
-              <p>{{pin.description}}</p>
-            </div>
+<section class="my-boards" ng-controller="BoardsController" ng-init="init()">
+  <article>
+    <div class="row">
+      <div class="col s12 m3" ng-repeat="board in boards">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img src="https://target.scene7.com/is/image/Target/14549690?wid=520&hei=520&fmt=pjpeg" alt="we can do it">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">
+              {{ board.title }}
+              <i class="material-icons right">more_vert</i>
+            </span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">
+              {{ board.title }}
+              <i class="material-icons right">more_vert</i>
+            <p>{{ board.description }}</p>
           </div>
         </div>
       </div>
-    </article>
-  </section>
-
-<section class="myBoards">
-    <article>
-        <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img ng-src="" class="activator" src="{{img.url}}">
-            </div>
-            <div class="card-content">
-                <span ng-model="board.title" class="card-title activator grey-text text-darken-4">{{board.title}}<i class="material-icons right">more_vert</i></span>
-                <!-- <a ng-click="submitBoard()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-                <!-- <p><a ng-show="" href="#">{{img.url}}</a></p> -->
-                <img src="https://target.scene7.com/is/image/Target/14549690?wid=520&hei=520&fmt=pjpeg" alt="yes!">
-            </div>
-            <div class="card-reveal">
-                <span ng-model="board.title" class="card-title grey-text text-darken-4">{{board.title}}<i ng-click="submitBoard()" class="material-icons right">close</i></span>
-                <p>{{board.title}}</p>
-            </div>
-        </article>
-    </section>
-
-    <section class="myBoards">
-            <article>
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img ng-src="" class="activator" src="{{img.url}}">
-                    </div>
-                    <div class="card-content">
-                        <span ng-model="board.title" class="card-title activator grey-text text-darken-4">{{board.title}}<i class="material-icons right">more_vert</i></span>
-                        <!-- <a ng-click="submitBoard()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-                        <!-- <p><a ng-show="" href="#">{{img.url}}</a></p> -->
-                        <img src="https://www.lorrihafer.com/assets/images/Something_Cool1.jpg" alt="yes!">
-                    </div>
-                    <div class="card-reveal">
-                        <span ng-model="board.title" class="card-title grey-text text-darken-4">{{board.title}}<i ng-click="submitBoard()" class="material-icons right">close</i></span>
-                        <p>{{board.title}}</p>
-                    </div>
-                </article>
-            </section>
-</div>
-    
+    </div>
+  </article>
+</section>

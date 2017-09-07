@@ -5,7 +5,7 @@
 app.controller("navCtrl", function($scope, $window, $routeParams, authFactory){
 
     $scope.isLoggedIn = false;
-    
+
     $scope.logout = () => {
         authFactory.logOut();
       };

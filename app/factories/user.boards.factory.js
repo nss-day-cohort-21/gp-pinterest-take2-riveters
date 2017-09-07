@@ -118,7 +118,7 @@ function singleBoard(){
 }
 
 function singlePin(){
-    
+
 }
 return{getAllPins, getAllBoards, addNewPin, addNewBoard};
 });

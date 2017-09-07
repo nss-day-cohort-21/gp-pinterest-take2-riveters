@@ -1,7 +1,11 @@
 "use strict";
 // console.log("App, yo!");
 
-const app = angular.module("PinterestApp", ["ngRoute"]);
+const app = angular.module("PinterestApp",
+    [
+        "ngRoute"
+    ]
+);
 
 let isAuth = (authFactory) => new Promise((resolve, reject) => {
     // console.log("authFactory is", authFactory);
@@ -51,3 +55,11 @@ app.run(($location, FBCreds) => {
     firebase.initializeApp(authConfig);
 });
 
+//modal
+
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+      $('.modal').modal();
+    });
+      $('#modal1').modal('open');
+      $('#modal1').modal('close');

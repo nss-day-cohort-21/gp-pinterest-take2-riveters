@@ -3,6 +3,12 @@
 // console.log("Getting all the stuff controller, yo!");
 
 app.controller("getController", function ($scope, UserBoards) {
+
+    // $scope.boards = [];
+    // $scope.pins = [];
+    // let user = authFactory.getCurrentUser();
+
+const showAllPins = function() {
     UserBoards.getAllPins()
         .then(function (pinCollection) {
             let pinArray = [];
@@ -14,7 +20,9 @@ app.controller("getController", function ($scope, UserBoards) {
             console.log("pinCollection", pinCollection);
             $scope.pins = pinArray;
         });
+};
 
+const showAllBoards = function() {
         UserBoards.getAllBoards()
         .then(function (boardCollection) {
             let boardArray = [];
@@ -26,8 +34,6 @@ app.controller("getController", function ($scope, UserBoards) {
             console.log("boardCollection", boardCollection);
             $scope.board = boardArray;
         });
-
+};
 
 });
-
-
