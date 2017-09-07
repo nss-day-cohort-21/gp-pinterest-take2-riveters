@@ -27,6 +27,7 @@
                 <span class="card-title">{{item.title}}</span>
                 <p>{{item.description}}</p>
                 <p><a href="{{item.url}}" target="_blank">Visit the Website</a></p>
+                <p>TAGS: <a class="tags">{{item.tags}}</a></p>
                 <!-- <div id="rivetIt"><a href=""><i class="material-icons">settings</i>Add A Rivet!</a></div> -->
 
             </div>
@@ -76,7 +77,7 @@
                     </div>
                 </form>
             </div>
-            <button id="create" ng-click="submitPin()" onclick="Materialize.toast('New Pin Created!', 3000)">{{submitButtonText}}</button>
+            <button class="red darken-2" id="create" ng-click="submitPin()" onclick="Materialize.toast('New Rivet Created!', 3000)">{{submitButtonText}}</button>
             <a class="waves-effect waves-light btn" class="btn btn-default" onclick="document.getElementById('id01').style.display='none'">Cancel</a>
         </div>
     </div>
