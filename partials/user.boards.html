@@ -1,5 +1,74 @@
-z
-<div>
+<div class="row">
+    <div class="col s8" ng-repeat="item in userDeets">
+        <h4>{{item.userName}}</h4>
+    </div>
+    <div class="col s4" ng-repeat="item in userDeets">
+        <div id="userPic"><img ng-src={{item.userPhoto}}></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12 m4">
+        <div class="card-panel hoverable card">
+            <div class="card-image">
+                <!-- <img src="images/sample-1.jpg"> -->
+            </div>
+            <div class="card-content">
+                <span class="card-title">ADD A NEW BOARD</span>
+                <a onclick="document.getElementById('id01').style.display='block'"><img src="app/assets/images/2000px-Ambox_plus.svg.png"></a>
+            </div>
+        </div>
+    </div>
+    <!-- </div>
+<div class="row"> -->
+    <div class="col s12 m4" ng-repeat="item in boards">
+        <div id="" class="card-panel hoverable card">
+            <div class="card-image">
+                <img ng-src="{{item.image}}">
+                <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+            </div>
+            <div class="card-content">
+                <span class="card-title">{{item.title}}</span>
+                <p>{{item.description}}</p>
+                <div id="rivetIt"><a href="#!/board/{{item.id}}"><i class="material-icons">settings</i>Add A Rivet!</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BEGIN MODAL -->
+<div id="id01" class="w3-modal" ng-controller="addBoard">
+    <div class="w3-modal-content">
+        <div class="w3-container">
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h3>{{title}}</h3>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Create A Board Title: Make it good!" id="title" type="text" class="validate" ng-model="board.title">
+
+                        </div>
+                        <div class="input-field col s12">
+                            <input placeholder="Enter a board description" id="description" type="text" class="validate" ng-model="board.description">
+
+                        </div>
+                        <div class="input-field col s12">
+                            <input placeholder="Add Image URL" id="image" type="text" class="validate" ng-model="board.image">
+
+                        </div>
+                    </div>
+                    <a class="waves-effect waves-light btn" class="btn btn-default" ng-click="submitBoard()" class="btn" onclick="Materialize.toast('New Board Created!', 3000)">{{submitButtonText}}</a>
+                    <a class="waves-effect waves-light btn" class="btn btn-default" onclick="document.getElementById('id01').style.display='none'">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- <div>
 <section class="myBoards">
     <article>
         <div class="row">
@@ -7,13 +76,19 @@ z
                 <div class="card">
                     <div class="card-image">
                     <div class="col-xs-6">
+<<<<<<< HEAD
                             <a href="#modal1"><img src="https://www.clker.com/cliparts/6/z/Y/C/2/s/orange-plus-sign.svg"></a>
                             <!-- <button ng-click="loginGoogle()" class="btn btn-info">Sign In</button> -->
                         </div>
+=======
+                            <a href="#modal1"><img src="https://www.clker.com/cliparts/6/z/Y/C/2/s/orange-plus-sign.svg"></a>  -->
+<!-- <button ng-click="loginGoogle()" class="btn btn-info">Sign In</button> -->
+<!-- </div>
+>>>>>>> origin
               <img ng-src="" src="{{img.url}}">
-              <span class="card-title">{{pin.title}}</span>
-              <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-            </div>
+              <span class="card-title">{{pin.title}}</span> -->
+<!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+<!-- </div>
             <div class="card-content">
               <p>{{pin.description}}</p>
             </div>
@@ -30,10 +105,10 @@ z
                 <img ng-src="" class="activator" src="{{img.url}}">
             </div>
             <div class="card-content">
-                <span ng-model="board.title" class="card-title activator grey-text text-darken-4">{{board.title}}<i class="material-icons right">more_vert</i></span>
-                <!-- <a ng-click="submitBoard()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-                <!-- <p><a ng-show="" href="#">{{img.url}}</a></p> -->
-                <img src="https://target.scene7.com/is/image/Target/14549690?wid=520&hei=520&fmt=pjpeg" alt="yes!">
+                <span ng-model="board.title" class="card-title activator grey-text text-darken-4">{{board.title}}<i class="material-icons right">more_vert</i></span> -->
+<!-- <a ng-click="submitBoard()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+<!-- <p><a ng-show="" href="#">{{img.url}}</a></p> -->
+<!-- <img src="https://target.scene7.com/is/image/Target/14549690?wid=520&hei=520&fmt=pjpeg" alt="yes!">
             </div>
             <div class="card-reveal">
                 <span ng-model="board.title" class="card-title grey-text text-darken-4">{{board.title}}<i ng-click="submitBoard()" class="material-icons right">close</i></span>
@@ -49,10 +124,10 @@ z
                         <img ng-src="" class="activator" src="{{img.url}}">
                     </div>
                     <div class="card-content">
-                        <span ng-model="board.title" class="card-title activator grey-text text-darken-4">{{board.title}}<i class="material-icons right">more_vert</i></span>
-                        <!-- <a ng-click="submitBoard()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-                        <!-- <p><a ng-show="" href="#">{{img.url}}</a></p> -->
-                        <img src="https://www.lorrihafer.com/assets/images/Something_Cool1.jpg" alt="yes!">
+                        <span ng-model="board.title" class="card-title activator grey-text text-darken-4">{{board.title}}<i class="material-icons right">more_vert</i></span> -->
+<!-- <a ng-click="submitBoard()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+<!-- <p><a ng-show="" href="#">{{img.url}}</a></p> -->
+<!-- <img src="https://www.lorrihafer.com/assets/images/Something_Cool1.jpg" alt="yes!">
                     </div>
                     <div class="card-reveal">
                         <span ng-model="board.title" class="card-title grey-text text-darken-4">{{board.title}}<i ng-click="submitBoard()" class="material-icons right">close</i></span>
@@ -61,3 +136,7 @@ z
                 </article>
             </section>
 </div>
+<<<<<<< HEAD
+=======
+     -->
+>>>>>>> origin

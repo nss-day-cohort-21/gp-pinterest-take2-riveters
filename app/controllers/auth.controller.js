@@ -6,14 +6,16 @@ app.controller("authCtrl", function ($scope, $window, authFactory, $location) {
     console.log("Yo! The authCtrl is loaded!");
     $scope.account = {
         email: "",
-        password: ""
+        password: "",
+        name: ""
     };
 
     $scope.register = () => {
         console.log("you clicked on register");
         authFactory.register({
                 email: $scope.account.email,
-                password: $scope.account.password
+                password: $scope.account.password,
+                name: $scope.account.name
             })
             .then((userData) => {
                 console.log("User controller newUser", userData);

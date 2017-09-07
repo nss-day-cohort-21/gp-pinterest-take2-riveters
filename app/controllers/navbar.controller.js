@@ -8,6 +8,7 @@ app.controller("navCtrl", function($scope, $window, $routeParams, authFactory){
     
     $scope.logout = () => {
         authFactory.logOut();
+        $window.location.reload();
       };
 
     firebase.auth().onAuthStateChanged(function(user) {

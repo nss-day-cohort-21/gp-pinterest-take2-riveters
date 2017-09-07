@@ -2,17 +2,18 @@
 
 console.log("pins.controller");
 
-app.controller("pinsController", function($scope, authFactory) {
+app.controller("pinsController", function($scope, authFactory, UserBoards){
 
     $scope.pins = [];
     let user = authFactory.getCurrentUser();
 
     const showAllPins = function() {
-        authFactory.getAllPins(user)
-            .then((boards) => {
+        UserBoards.getAllPins(user)
+            .then((pins) => {
                 console.log("showAllPins", pins);
                 $scope.pins = pins;
             });
     };
-showAllPins();
+
+    showAllPins();
 });

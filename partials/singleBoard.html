@@ -1,0 +1,81 @@
+<h4>BOARD: {{allBoardPinsName}}</h4>
+NEED TO ADD PINS ASSOCIATED WITH THIS BOARD ID
+<div class="row">
+        <div class="col s12 m4">
+            <div class="card-panel hoverable card">
+                <div class="card-image">
+                    <!-- <img src="images/sample-1.jpg"> -->
+                </div>
+                <div class="card-content">
+                    <span class="card-title">ADD A NEW BOARD</span>
+                    <a a onclick="document.getElementById('id01').style.display='block'"><img src="app/assets/images/2000px-Ambox_plus.svg.png"></a>
+                </div>
+            </div>
+        </div>
+    <!-- </div>
+    <div class="row"> -->
+        <div class="col s12 m4" ng-repeat="item in allBoardPins">
+            <div id="" class="card-panel hoverable card">
+                <div class="card-image">
+                    <img ng-src="{{item.img}}">
+                    <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+                </div>
+                <div class="card-content">
+                    <span class="card-title">{{item.title}}</span>
+                    <p>{{item.description}}</p>
+                    <p><a href="{{item.url}}" target="_blank">Visit the Website</a></p>
+                    <!-- <div id="rivetIt"><a href=""><i class="material-icons">settings</i>Add A Rivet!</a></div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BEGIN MODAL -->
+<div id="id01" class="w3-modal" ng-controller="addPin">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h3>{{title}}</h3>
+                
+                  <!-- Dropdown Trigger -->
+                  <a class='dropdown-button btn' href='#' data-activates='dropdown1'>My Boards!</a>
+                  
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                      <li><a href="#!">one</a></li>
+                      <li><a href="#!">two</a></li>
+                      <li><a href="#!">three</a></li>
+                    </ul>
+                <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s6">
+                            <input id="title" type="text" class="validate" ng-model="pin.title">
+                            <label for="title">Title</label>
+                          </div>
+                        <div class="input-field col s6">
+                          <input id="URL" type="text" class="validate" ng-model="pin.url">
+                          <label for="URL">URL</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="imageUrl" type="text" class="validate" ng-model="pin.img">
+                            <label for="imageUrl">Image URL</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="description" type="text" class="validate" ng-model="pin.description">
+                            <label for="description">Description</label>
+                          </div>
+                          <div class="input-field col s6">
+                            <input id="tags" type="text" class="validate" ng-model="pin.tags">
+                            <label for="tags">Tags</label>
+                          </div>
+                      </div>
+                    </form>
+                  </div>
+                  <button id="create" ng-click="submitPin()">{{submitButtonText}}</button>
+                  <a class="waves-effect waves-light btn" class="btn btn-default" onclick="document.getElementById('id01').style.display='none'">Cancel</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    

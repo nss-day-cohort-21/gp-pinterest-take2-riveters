@@ -1,27 +1,44 @@
 <div>
     <!-- logo -->
     <h4>Welcome</h4>
-    <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input placeholder="Email" type="text" autofocus="true" ng-model="account.email">
-                </div>
-                <div class="input-field col s6">
-                    <input placeholder="Password" type="password" ng-model="account.password">
+    <script>
+        $(document).ready(function () {
+            $('.collapsible').collapsible();
+        });
+    </script>
 
-                </div>
-            </div>
-        </form>
-    </div>
-    <!-- register button -->
-    <a ng-click="register()" class="waves-effect waves-light btn-large">Register</a>
+
     <button ng-click="login()" class="waves-effect waves-light btn-large">Login</button>
     <p>OR</p>
     <!-- button continue with google -->
     <!-- button login -->
     <div class="col-xs-6">
-        <a href="#" ng-click="loginGoogle()"><img src="app/assets/images/googleLogin.png"></a> 
+        <a href="#" ng-click="loginGoogle()"><img src="app/assets/images/googleLogin.png"></a>
         <!-- <button ng-click="loginGoogle()" class="btn btn-info">Sign In</button> -->
     </div>
+
+    <ul class="collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Become a Riveter!</div>
+            <div class="collapsible-body"><span><div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                                <div class="input-field col s6">
+                                        <input placeholder="What should we call you?" type="text" ng-model="account.name">
+                    
+                                    </div>
+                            <div class="input-field col s6">
+                                <input placeholder="Email" type="text" autofocus="true" ng-model="account.email">
+                            </div>
+                            <div class="input-field col s6">
+                                <input placeholder="Create a Password" type="password" ng-model="account.password">
+            
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- register button -->
+                <a ng-click="register()" class="waves-effect waves-light btn-large">Register</a></span></div>
+        </li>
+    </ul>
 </div>
