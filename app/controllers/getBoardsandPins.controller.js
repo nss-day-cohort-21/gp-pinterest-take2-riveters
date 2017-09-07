@@ -26,7 +26,8 @@ const showAllBoards = function() {
         UserBoards.getAllBoards()
         .then(function (boardCollection) {
             let boardArray = [];
-            // console.log(boardArray);
+            debugger;
+            console.log(boardArray);
             let boardKeys = Object.keys(boardCollection);
             boardKeys.forEach((item) => {
                 boardArray.push(boardCollection[item]);
