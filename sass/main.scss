@@ -1,3 +1,7 @@
+body {
+    background: #FDC316;
+}
+
 button {
     display: inline-block;
     height: 42px;
@@ -12,7 +16,6 @@ button {
     height: 42px;
     width: 204px;
 }
-
 
 #search {
     margin-right: 500px;
@@ -37,6 +40,63 @@ button {
 }
 
 #rivetIt{
-    margin-top:5px;
-    border-top: 1px solid black;
+    margin-top:10px;
+    border-top: 1px solid lightgray;
+    padding-top:10px;
+}
+.loginTable{
+    background: white;
+    border: #F12819 3px solid;
+    border-radius: 20px;
+    padding: 40px;
+    margin:20px auto;
+}
+
+input.loginInput{
+    background: white;
+    border: none;
+}
+
+.waves-effect.waves-light.btn-large{
+    background: #0D2953;
+    width: 400px;
+}
+
+.waves-effect.waves-light.btn-large:hover{
+    background: #D17451;
+}
+
+.userImage{
+    width: 200px;
+}
+
+.headingTitle{
+    margin: 40px;
+}
+
+.nav-wrapper, .page-footer{
+    // background: #BD081C;
+    background-image: url('../app/assets/images/polk.png');
+    background-repeat: repeat;
+}
+.nav-Btn {
+    background: #BD081C;
+}
+
+.brand-logo.left img{
+    margin: 20px;
+    width: 180px;
+}
+
+.footer-copyright {
+    color: black;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.tags{
+    color: blue;
+    font-weight: bold;
+    font-size: .8em;
+    font-style: italic;
 }
