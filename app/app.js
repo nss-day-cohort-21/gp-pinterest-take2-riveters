@@ -1,7 +1,11 @@
 "use strict";
 // console.log("App, yo!");
 
-const app = angular.module("PinterestApp", ["ngRoute"]);
+const app = angular.module("PinterestApp",
+    [
+        "ngRoute"
+    ]
+);
 
 let isAuth = (authFactory) => new Promise((resolve, reject) => {
     // console.log("authFactory is", authFactory);
