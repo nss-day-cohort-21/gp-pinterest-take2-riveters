@@ -10,13 +10,15 @@ app.controller("addBoard", function ($scope, $location, UserBoards, authFactory)
     
         $scope.board = {
             title: "",
+            description: "",
+            image: "",
             uid: user
         };
     
         $scope.submitBoard = function () {
             UserBoards.addNewBoard($scope.board)
                 .then((data) => {
-                    $location.url("/board-view");
+                    $location.url("#!/");
                 });
         };
  });

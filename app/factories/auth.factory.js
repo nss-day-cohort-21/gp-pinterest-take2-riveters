@@ -4,7 +4,7 @@
 
 app.factory("authFactory", function ($q, $http, FBCreds) {
     let currentUser = null;
-    let AddNewUserObj = {};
+    let AddNewUserObj = [];
 
     const isAuthenticated = function () {
         // console.log("authFactory: isAuthenticated");
@@ -12,19 +12,21 @@ app.factory("authFactory", function ($q, $http, FBCreds) {
             firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
                     currentUser = user.uid;
-                    let userName = user.displayName;
-                    let userEmail = user.email;
-                    let userPhoto = user.photoURL;
-                    console.log("user", user.uid);
-                    console.log("userName", userName);
-                    console.log("useremail", userEmail);
-                    console.log("userPhoto", userPhoto);
+                    AddNewUserObj.push({
+                        userName: user.displayName,
+                        userEmail: user.email,
+                        userPhoto: user.photoURL
+                    });
                     resolve(true);
                 } else {
                     resolve(false);
                 }
             });
         });
+    };
+
+    const getUserDeets = function(){
+        return AddNewUserObj;
     };
 
     const getCurrentUser = function () {
@@ -48,14 +50,15 @@ app.factory("authFactory", function ($q, $http, FBCreds) {
     const register = function (userObj) {
         return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
         .then(function addNewUser(userObj){
-                let AddNewUserObj = {
+                let AddNewUsertoFB = {
                     uid: userObj.uid,
-                    email: userObj.email,
-                    photo: "",
-                    name: ""
+                    userEmail: userObj.email,
+                    userPhoto: "app/assets/images/rosie.png",
+                    userName: "Rosie Rivets"
                 };
-                console.log("newUSER.uid", AddNewUserObj);
-                let newObj = JSON.stringify(AddNewUserObj);
+                AddNewUserObj.push(AddNewUsertoFB);
+                console.log("newUSER.uid", AddNewUsertoFB);
+                let newObj = JSON.stringify(AddNewUsertoFB);
                 return $http.post(`${FBCreds.databaseURL}/users.json`, newObj)
                     .then((data) => {
                         console.log("data", data);
@@ -85,7 +88,8 @@ app.factory("authFactory", function ($q, $http, FBCreds) {
         logOut,
         register,
         isAuthenticated,
-        authWithProvider
+        authWithProvider,
+        getUserDeets
     };
 
 });

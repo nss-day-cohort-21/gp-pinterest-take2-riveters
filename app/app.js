@@ -28,11 +28,11 @@ app.config(($routeProvider) => {
             controller: 'BoardsController',
             resolve: {isAuth}
         })
-         // .when('/', {
-        //     templateUrl: 'partials/user.pins.html',
-        //     controller: 'pinsController',
-        //     resolve: {isAuth}
-        // })
+        .when('/board-view', {
+            templateUrl: 'partials/user.boards.html',
+            controller: 'BoardsController',
+            resolve: {isAuth}
+        })
         .when('/profile', {
             templateUrl: 'partials/user.boards.html',
             controller: 'BoardsController',
@@ -43,10 +43,22 @@ app.config(($routeProvider) => {
             controller: 'pinsController',
             resolve: {isAuth}
         })
-        .when('/board-view', {
-            templateUrl: '',
-            controller: 'getController',
+        .when('/add-board', {
+            templateUrl: 'partials/addboard.html',
+            controller: 'addBoard',
             resolve: {isAuth}
+        })
+        .when('/add-pin', {
+            templateUrl: 'partials/addpins.html',
+            controller: 'addPin',
+            resolve: {isAuth}
+        })
+        .when('/board/:itemId', {
+            templateUrl: 'partials/singleBoard.html',
+            controller: 'BoardDetails',
+            resolve: {
+                isAuth
+            }
         })
         .otherwise('/');
 });

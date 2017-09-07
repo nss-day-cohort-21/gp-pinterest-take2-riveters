@@ -70,6 +70,42 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
     };
 
 
+    const getBoardPins = function (boardId) {
+        let boardedPins = [];
+        return $q((resolve, reject) => {
+            $http.get(`${FBCreds.databaseURL}/pins.json?orderBy="boardid"&equalTo="${boardId}"`)
+                .then((boardPins) => {
+                    let boardPinCollection = boardPins.data;
+                    console.log("boardPinCollection", boardPinCollection);
+                    Object.keys(boardPinCollection).forEach((key) => {
+                        boardPinCollection[key].id = key;
+                        boardedPins.push(boardPinCollection[key]);
+                });
+                console.log("boardedPins", boardedPins);
+                resolve(boardedPins);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    };
+
+    const getBoardName = function (boardId) {
+        return $q((resolve, reject) => {
+            $http.get(`${FBCreds.databaseURL}/board/${boardId}.json`)
+                .then((boardInfo) => {
+                    let boardInfoCollection = boardInfo.data;
+                    console.log("boardPinCollection", boardInfoCollection);
+                    let singleBoardName = boardInfoCollection.title;
+                console.log("singleBoardName", singleBoardName);
+                resolve(singleBoardName);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    };
+
     // removeFromFB: function(id) {
     //     fire.getAllPins()
     //     .then((data) => {
@@ -85,38 +121,5 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
     //     });
     //   };
 
-
-
-function addBoard(){
-
-}
-
-function addPin(){
-
-}
-
-function deletePin(){
-
-}
-
-function deleteBoard(){
-
-}
-
-// function getAllPins(){
-
-// }
-
-// function getAllBoards(){
-
-// }
-
-function singleBoard(){
-
-}
-
-function singlePin(){
-    
-}
-return{getAllPins, getAllBoards, addNewPin, addNewBoard};
+return{getAllPins, getAllBoards, addNewPin, addNewBoard, getBoardPins, getBoardName};
 });

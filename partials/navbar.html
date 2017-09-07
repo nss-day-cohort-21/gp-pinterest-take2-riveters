@@ -1,10 +1,9 @@
 <nav ng-controller="navCtrl">
     <div class="nav-wrapper">
         <ul class="right hide-on-med-and-down">
-            <a href="#!" class="brand-logo left">Logo</a>
+            <!-- <a href="#!" class="brand-logo left">Logo</a> -->
             <li><input type="text" class="form-control" placeholder="Search" ng-model="searchText.search"></li>
             <li><a ng-show="isLoggedIn" ng-href="#!/item-list">Show All</a></li>
-            <li><a ng-show="isLoggedIn" ng-href="#!/item/newItem">Add Task</a></li>
             <li><a ng-show="!isLoggedIn">Login</a></li>
             <li><a ng-show="isLoggedIn" ng-click="logout()">Logout</a></li>
         </ul>
