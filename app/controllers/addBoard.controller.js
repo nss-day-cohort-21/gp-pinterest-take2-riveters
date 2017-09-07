@@ -18,7 +18,7 @@ app.controller("addBoard", function ($scope, $location, UserBoards, authFactory)
         $scope.submitBoard = function () {
             UserBoards.addNewBoard($scope.board)
                 .then((data) => {
-                    $location.url("#!/");
+                    $location.url("/");
                 });
         };
  });
