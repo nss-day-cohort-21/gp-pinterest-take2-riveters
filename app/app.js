@@ -19,9 +19,19 @@ let isAuth = (authFactory) => new Promise((resolve, reject) => {
 
 app.config(($routeProvider) => {
     $routeProvider
-        .when('/', {
+        .when('/login', {
             templateUrl: 'partials/loggedout.html',
             controller: 'authCtrl'
+        })
+        .when('/', {
+            templateUrl: 'partials/user.boards.html',
+            controller: 'BoardsController',
+            resolve: {isAuth}
+        })
+        .when('/board-view', {
+            templateUrl: 'partials/user.boards.html',
+            controller: 'BoardsController',
+            resolve: {isAuth}
         })
         .when('/profile', {
             templateUrl: 'partials/user.boards.html',
@@ -33,10 +43,22 @@ app.config(($routeProvider) => {
             controller: 'pinsController',
             resolve: {isAuth}
         })
-        .when('/board-view', {
-            templateUrl: 'partials/user.boards.html',
-            controller: 'getController',
+        // .when('/add-board', {
+        //     templateUrl: 'partials/addboard.html',
+        //     controller: 'addBoard',
+        //     resolve: {isAuth}
+        // })
+        .when('/add-pin', {
+            templateUrl: 'partials/addpins.html',
+            controller: 'addPin',
             resolve: {isAuth}
+        })
+        .when('/board/:itemId', {
+            templateUrl: 'partials/singleBoard.html',
+            controller: 'BoardDetails',
+            resolve: {
+                isAuth
+            }
         })
         .otherwise('/');
 });

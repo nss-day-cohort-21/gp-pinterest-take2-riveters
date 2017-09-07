@@ -3,6 +3,7 @@
 // console.log("Getting all the stuff controller, yo!");
 
 app.controller("getController", function ($scope, UserBoards) {
+    
     UserBoards.getAllPins()
         .then(function (pinCollection) {
             let pinArray = [];
