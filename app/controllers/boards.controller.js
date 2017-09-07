@@ -2,7 +2,7 @@
 
 console.log("boards.controller");
 
-app.controller("BoardsController", function($scope, authFactory, UserBoards){
+app.controller("BoardsController", function($scope, authFactory, UserBoards, $route){
 
     $scope.boards = [];
     let user = authFactory.getCurrentUser();
