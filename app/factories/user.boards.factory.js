@@ -118,6 +118,22 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
         });
     };
 
+    const editSingleBoard = function(obj) {
+        console.log('edit obj', obj);
+        return $q((resolve, reject) => {
+            let newObj = JSON.stringify(obj);
+            $http.patch(`${FBCreds.databaseURL}/board.json`, newObj)
+                .then((data) => {
+                    console.log("data", data);
+                    resolve(data);
+                }, (error) => {
+                    let errorCode = error.code;
+                    let errorMessage = error.message;
+                    console.log("error", errorCode, errorMessage);
+                });
+        });
+    };
+
     // removeFromFB: function(id) {
     //     fire.getAllPins()
     //     .then((data) => {
@@ -133,5 +149,5 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
     //     });
     //   };
 
-return{getAllPins, getAllBoards, addNewPin, addNewBoard, getBoardPins, getBoardName, deleteBoard};
+return{getAllPins, getAllBoards, addNewPin, addNewBoard, getBoardPins, getBoardName, deleteBoard, editSingleBoard};
 });

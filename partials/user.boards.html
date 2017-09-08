@@ -24,7 +24,7 @@
     <div class="col s12 m4" ng-repeat="item in boards | filter:searchText">
         <div id="" class="card-panel hoverable card">
             <div class="card-image">
-                <a href="#!/board/{{item.id}}"><img ng-src="{{item.image}}"></a>
+                <a onclick="document.getElementById('board.id').style.display='block'" href="#!/board/{{item.id}}"><img ng-src="{{item.image}}"></a>
                 <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
             </div>
             <div class="card-content">
@@ -35,6 +35,35 @@
                 <div class="style-icon" id="deleteBoard"><a ng-click="deleteBoard(item.id)" href="#!/board/{{boardId}}"><i class="material-icons">settings</i>Delete Board!</a></div>
             </div>
         </div>
+         <!-- EDIT BOARD MODAL -->
+         <div id="{{boardId}}" class="w3-modal" ng-controller="addBoard">
+                <div class="w3-modal-content">
+                    <div class="w3-container">
+                        <span onclick="document.getElementById('board.id').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <h3>{{title}}</h3>
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="Create A Board Title: Make it good!" id="title" type="text" class="validate" ng-model="board.title">
+
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <input placeholder="Enter a board description" id="description" type="text" class="validate" ng-model="board.description">
+
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <input placeholder="Add Image URL" id="image" type="text" class="validate" ng-model="board.image">
+
+                                    </div>
+                                </div>
+                                <a class="waves-effect waves-light btn" class="btn btn-default" ng-click="submitBoard()" class="btn" onclick="Materialize.toast('New Board Created!', 3000)">{{submitButtonText}}</a>
+                                <a class="waves-effect waves-light btn" class="btn btn-default" onclick="document.getElementById('board.id').style.display='none'">Cancel</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div> <!--END EDIT BOARD MODAL -->
     </div>
 </div>
 
@@ -68,6 +97,7 @@
     </div>
 </div>
 </div>
+
 
 
 <!-- <div>
