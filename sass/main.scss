@@ -69,15 +69,17 @@ input.loginInput {
 
 .userImage {
     width: 200px;
+    margin-top: 50px;
+    border: 3px solid #C30029;
+    border-radius: 100px;
 }
 
 .headingTitle {
     margin: 40px;
 }
 
-.nav-wrapper,
-.page-footer {
-    // background: #BD081C;
+
+.nav-wrapper, .page-footer{
     background-image: url('../app/assets/images/polk.png');
     background-repeat: repeat;
 }
@@ -105,4 +107,20 @@ input.loginInput {
     font-weight: bold;
     font-size: .8em;
     font-style: italic;
+}
+
+.card{
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#deleteStuff{
+    display: block;
+    /* float: right; */
+    margin-top: 30px;
+}
+
+.card-content{
+    text-align: center;
 }

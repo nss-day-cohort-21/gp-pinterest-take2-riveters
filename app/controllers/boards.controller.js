@@ -19,15 +19,11 @@ app.controller("BoardsController", function($scope, authFactory, UserBoards, $ro
     let getThoseDeets = function(){
          let pulledInfo = authFactory.getUserDeets();
          $scope.userDeets = pulledInfo.splice(0,1);
-        // console.log("$$$$$pulledInfo", pulledInfo);
-        // console.log("$scope.userDeets", $scope.userDeets);
     };
 
     $scope.deleteBoard = function(boardId){
-        console.log("heeeeeeeeeyyyyyyyy");
             UserBoards.deleteBoard(boardId)
-            .then( (irrelevant) => {
-            
+            .then(() => {
                 $route.reload();
             });
         };
