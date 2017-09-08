@@ -1,7 +1,7 @@
 
 <input class="form-control mr-sm-2" type="text" placeholder="Search" ng-model="searchText">
 
-<center><h2 class="headingTitle">RIVET IT: {{allBoardPinsName}}</h2></center>
+<center>Your RIVETs For: <h2 class="headingTitle">{{allBoardPinsName}}</h2></center>
 <div class="row">
     <div class="col s12 m4">
         <div class="card-panel hoverable card">
@@ -64,7 +64,8 @@
                     </div>
                 </form>
             </div>
-            <button class="red darken-2" id="create" ng-click="submitPin()" onclick="Materialize.toast('New Rivet Created!', 3000)">{{submitButtonText}}</button>
+            <!-- <button class="red darken-2" id="create" ng-click="submitPin()" onclick="Materialize.toast('New Rivet Created!', 3000)">{{submitButtonText}}</button> -->
+            <a class="waves-effect waves-light btn" class="btn btn-default" ng-click="submitPin()" class="btn" onclick="Materialize.toast('New Rivet Created!', 3000)">{{submitButtonText}}</a>
             <a class="waves-effect waves-light btn" class="btn btn-default" onclick="document.getElementById('id01').style.display='none'">Cancel</a>
         </div>
     </div>
