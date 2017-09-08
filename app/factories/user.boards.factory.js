@@ -69,13 +69,14 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
             });
     };
 
-
     const getBoardPins = function (boardId) {
         let boardedPins = [];
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/pins.json?orderBy="boardid"&equalTo="${boardId}"`)
                 .then((boardPins) => {
                     let boardPinCollection = boardPins.data;
+                    let pinKeys = Object.keys(boardPinCollection);
+                    console.log("PIN KEYS", pinKeys);
                     console.log("boardPinCollection", boardPinCollection);
                     Object.keys(boardPinCollection).forEach((key) => {
                         boardPinCollection[key].id = key;
@@ -118,20 +119,6 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
         });
     };
 
-    // removeFromFB: function(id) {
-    //     fire.getAllPins()
-    //     .then((data) => {
-    //       let keys = Object.keys(data);
-    //       let correctUgly;
-    //       $(keys).each((index, item) => {
-    //         let eachPin = data[item];
-    //         if (eachPin.movieID === id) {
-    //           correctUgly = keys[index];
-    //         }
-    //       });
-    //       fdr.ref(`/${correctUgly}`).remove();
-    //     });
-    //   };
 
 return{getAllPins, getAllBoards, addNewPin, addNewBoard, getBoardPins, getBoardName, deleteBoard};
 });

@@ -1,10 +1,11 @@
 <nav ng-controller="navCtrl">
     <div class="nav-wrapper">
         <ul class="right hide-on-med-and-down">
-            <a href="#!" class="brand-logo left"><img src="app/assets/images/rivet.png"></a>
-            <li><a ng-show="isLoggedIn" ng-href="#!/item-list">Show All Boards</a></li>
-            <li><a ng-show="!isLoggedIn">Login</a></li>
-            <li><a ng-show="isLoggedIn" ng-click="logout()">Logout</a></li>
+            <a href="#!" class="brand-logo left"><img src="app/assets/images/rosieLogo.png"></a>
+            <li class="nav-Btn"><a ng-show="isLoggedIn" href="http://images.google.com" target="_blank">Find Images</a></li>
+            <li class="nav-Btn"><a ng-show="isLoggedIn" ng-href="#!/">Show All Boards</a></li>
+            <li class="nav-Btn"><a ng-show="!isLoggedIn">Login</a></li>
+            <li class="nav-Btn"><a ng-show="isLoggedIn" ng-click="logout()">Logout</a></li>
         </ul>
     </div>
 </nav>
