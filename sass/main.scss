@@ -39,10 +39,24 @@ button {
     display: flex;
 }
 
+.card-title {
+    font-family: 'Berkshire Swash', cursive;
+}
+
+.ng-binding {
+    font-style: italic !important;
+}
+
 #rivetIt {
     margin-top: 10px;
     border-top: 1px solid lightgray;
     padding-top: 10px;
+}
+
+.material-icons {
+    display: inline;
+    padding-right: 8px !important;
+    padding-top: 2px !important;
 }
 
 .loginTable {
