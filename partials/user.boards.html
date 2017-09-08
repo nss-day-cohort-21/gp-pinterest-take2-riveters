@@ -30,8 +30,8 @@
             <div class="card-content">
                 <span class="card-title">{{item.title}}</span>
                 <p>{{item.description}}</p>
-                <div class="style-icon" id="rivetIt"><a href="#!/board/{{item.id}}" onclick="document.getElementById('id01').style.display='block'"><i class="material-icons">settings</i>Add A Rivet!</a></div>
-                <div class="style-icon" id="editBoard"><a ng-click="editBoard(item.id)" href="#!/board/{{boardId}}"><i class="material-icons">settings</i>Edit Board!</a></div>
+                <div class="style-icon" id="rivetIt"><a onclick="document.getElementById('id03').style.display='block'" href="#!/board/{{item.id}}"><i class="material-icons">settings</i>Add A Rivet!</a></div>
+                <div class="style-icon" id="editBoard"><a ng-click="editBoard(item.id)" onclick="document.getElementById('board.id').style.display='none'" href="#!/board/{{boardId}}"><i class="material-icons">settings</i>Edit Board!</a></div>
                 <div class="style-icon" id="deleteBoard"><a ng-click="deleteBoard(item.id)" href="#!/board/{{boardId}}"><i class="material-icons">settings</i>Delete Board!</a></div>
             </div>
         </div>
@@ -97,6 +97,37 @@
     </div>
 </div>
 </div>
+
+<!-- BEGIN MODAL -->
+<div id="id03" class="w3-modal" ng-controller="addBoard">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h3>{{title}}</h3>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Create A Board Title: Make it good!" id="title" type="text" class="validate" ng-model="board.title">
+
+                            </div>
+                            <div class="input-field col s12">
+                                <input placeholder="Enter a board description" id="description" type="text" class="validate" ng-model="board.description">
+
+                            </div>
+                            <div class="input-field col s12">
+                                <input placeholder="Add Image URL" id="image" type="text" class="validate" ng-model="board.image">
+
+                            </div>
+                        </div>
+                        <a class="waves-effect waves-light btn" class="btn btn-default" ng-click="submitBoard()" class="btn" onclick="Materialize.toast('New Board Created!', 3000)">{{submitButtonText}}</a>
+                        <a class="waves-effect waves-light btn" class="btn btn-default" onclick="document.getElementById('id03').style.display='none'">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
 
 
