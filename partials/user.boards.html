@@ -2,7 +2,8 @@
     <center>
         <div id="userPic"><img class="userImage" ng-src={{item.userPhoto}}></div>
 
-        <h4>{{item.userName}}'s Rivet Boards</h4>
+        <h4>Hello, {{item.userName}}!</h4>
+        <h1>Your Rivet Boards</h1>
     </center>
 </div>
 <input class="form-control mr-sm-2" class="searchBar" type="text" placeholder="Search" ng-model="searchText">
@@ -31,7 +32,7 @@
                 <span class="card-title">{{item.title}}</span>
                 <p>{{item.description}}</p>
                 <div id="rivetIt"><a href="#!/board/{{item.id}}"><i class="material-icons">settings</i>Add A Rivet!</a></div>
-                <div id="deleteStuff"><a ng-click="deleteBoard(item.id)" href="#!/board/{{boardId}}"><i class="material-icons">delete_forever</i></a></div>
+                <div id="deleteStuff"><a ng-click="deleteBoard(item.id)" href="#!/"><i class="material-icons">delete_forever</i></a></div>
             </div>
         </div>
     </div>

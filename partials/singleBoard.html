@@ -1,7 +1,6 @@
-<center>
-    <h2 class="headingTitle">RIVET IT: {{allBoardPinsName}}</h2>
-</center>
-<input class="form-control mr-sm-2" class="searchBar" type="text" placeholder="Search" ng-model="searchText">
+
+<center><p>Your RIVETs For: </p><h2 class="headingTitle">{{allBoardPinsName}}</h2></center>
+<input class="form-control mr-sm-2" type="text" placeholder="Search" ng-model="searchText">
 <div class="row">
     <div class="col s12 m4">
         <div class="card-panel hoverable card">
@@ -14,9 +13,6 @@
             </div>
         </div>
     </div>
-    <!-- </div>
-    <div class="row"> -->
-
     <div class="col s12 m4" ng-repeat="item in allBoardPins | filter:searchText">
         <div id="" class="card-panel hoverable card">
             <div class="card-image">
@@ -67,8 +63,8 @@
                     </div>
                 </form>
             </div>
-
-            <a class="waves-effect waves-light btn" class="btn btn-default" class="style-button" href="#" ng-click="submitPin()">Submit</a>
+            <!-- <button class="red darken-2" id="create" ng-click="submitPin()" onclick="Materialize.toast('New Rivet Created!', 3000)">{{submitButtonText}}</button> -->
+            <a class="waves-effect waves-light btn" class="btn btn-default" ng-click="submitPin()" class="btn" onclick="Materialize.toast('New Rivet Created!', 3000)">{{submitButtonText}}</a>
             <a class="waves-effect waves-light btn" class="btn btn-default" onclick="document.getElementById('id01').style.display='none'">Cancel</a>
         </div>
     </div>

@@ -68,14 +68,14 @@ input.loginInput {
 }
 
 .userImage {
-    width: 200px;
+    width: 100px;
     margin-top: 50px;
     border: 3px solid #C30029;
     border-radius: 100px;
 }
 
 .headingTitle {
-    margin: 40px;
+    /* margin: 40px; */
 }
 
 
@@ -123,4 +123,8 @@ input.loginInput {
 
 .card-content{
     text-align: center;
+}
+
+.waves-effect.waves-light.btn{
+    margin-bottom: 20px;
 }
