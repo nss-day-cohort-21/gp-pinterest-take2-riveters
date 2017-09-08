@@ -26,22 +26,22 @@ app.config(($routeProvider) => {
         .when('/', {
             templateUrl: 'partials/user.boards.html',
             controller: 'BoardsController',
-            resolve: {isAuth}
+            resolve: { isAuth }
         })
         .when('/board-view', {
             templateUrl: 'partials/user.boards.html',
             controller: 'BoardsController',
-            resolve: {isAuth}
+            resolve: { isAuth }
         })
         .when('/profile', {
             templateUrl: 'partials/user.boards.html',
             controller: 'BoardsController',
-            resolve: {isAuth}
-         })
+            resolve: { isAuth }
+        })
         .when('/pin-view', {
             templateUrl: 'partials/user.pins.html',
             controller: 'pinsController',
-            resolve: {isAuth}
+            resolve: { isAuth }
         })
         // .when('/add-board', {
         //     templateUrl: 'partials/addboard.html',
@@ -51,14 +51,17 @@ app.config(($routeProvider) => {
         .when('/add-pin', {
             templateUrl: 'partials/addpins.html',
             controller: 'addPin',
-            resolve: {isAuth}
+            resolve: { isAuth }
         })
         .when('/board/:itemId', {
             templateUrl: 'partials/singleBoard.html',
             controller: 'BoardDetails',
-            resolve: {
-                isAuth
-            }
+            resolve: { isAuth }
+        })
+        .when('/all-pins', {
+            templateUrl: 'partials/allUserPins.html',
+            controller: 'getController',
+            resolve: { isAuth }
         })
         .otherwise('/');
 });
@@ -72,4 +75,3 @@ app.run(($location, FBCreds) => {
     };
     firebase.initializeApp(authConfig);
 });
-
