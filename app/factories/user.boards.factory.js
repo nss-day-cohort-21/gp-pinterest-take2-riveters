@@ -2,9 +2,9 @@
 
 // console.log('USER BOARDS');
 
-app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
-    
-    const getAllPins = function (user) {
+app.factory("UserBoards", function($q, $http, FBCreds, authFactory) {
+
+    const getAllPins = function(user) {
         let pins = [];
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/pins.json?orderBy="uid"&equalTo="${user}"`)
@@ -23,7 +23,7 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
         });
     };
 
-    const getAllBoards = function (user) {
+    const getAllBoards = function(user) {
         let boards = [];
         console.log(user);
         return $q((resolve, reject) => {
@@ -43,7 +43,7 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
         });
     };
 
-    const addNewPin = function (obj) {
+    const addNewPin = function(obj) {
         let newObj = JSON.stringify(obj);
         return $http.post(`${FBCreds.databaseURL}/pins.json`, newObj)
             .then((data) => {
@@ -56,7 +56,7 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
             });
     };
 
-    const addNewBoard = function (obj) {
+    const addNewBoard = function(obj) {
         let newObj = JSON.stringify(obj);
         return $http.post(`${FBCreds.databaseURL}/board.json`, newObj)
             .then((data) => {
@@ -69,7 +69,9 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
             });
     };
 
+
     const getBoardPins = function (boardId) {
+
         let boardedPins = [];
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/pins.json?orderBy="boardid"&equalTo="${boardId}"`)
@@ -81,9 +83,9 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
                     Object.keys(boardPinCollection).forEach((key) => {
                         boardPinCollection[key].id = key;
                         boardedPins.push(boardPinCollection[key]);
-                });
-                console.log("boardedPins", boardedPins);
-                resolve(boardedPins);
+                    });
+                    console.log("boardedPins", boardedPins);
+                    resolve(boardedPins);
                 })
                 .catch((error) => {
                     reject(error);
@@ -91,15 +93,15 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
         });
     };
 
-    const getBoardName = function (boardId) {
+    const getBoardName = function(boardId) {
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/board/${boardId}.json`)
                 .then((boardInfo) => {
                     let boardInfoCollection = boardInfo.data;
                     console.log("boardPinCollection", boardInfoCollection);
                     let singleBoardName = boardInfoCollection.title;
-                console.log("singleBoardName", singleBoardName);
-                resolve(singleBoardName);
+                    console.log("singleBoardName", singleBoardName);
+                    resolve(singleBoardName);
                 })
                 .catch((error) => {
                     reject(error);
@@ -107,18 +109,34 @@ app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
         });
     };
 
-    const deleteBoard = function(boardId){
-        return $q( (resolve, reject) => {
+    const deleteBoard = function(boardId) {
+        return $q((resolve, reject) => {
             $http.delete(`${FBCreds.databaseURL}/board/${boardId}.json`)
-            .then((response) => {
-                resolve(response);
-            })
-            .catch((error) => {
-                reject(error);
-            });
+                .then((response) => {
+                    resolve(response);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    };
+
+    /////////////////////////
+    //Get all pin objects:
+    /////////////////////////
+    let getAllUsersPins = () => {
+        return $q((resolve, reject) => {
+            $http.get(`${FBCreds.databaseURL}/pins.json?`).then((itemObject) => {
+                    let itemCollection = itemObject.data;
+                    console.log("all users pins", itemCollection);
+                    resolve(itemCollection);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
         });
     };
 
 
-return{getAllPins, getAllBoards, addNewPin, addNewBoard, getBoardPins, getBoardName, deleteBoard};
+    return { getAllPins, getAllBoards, addNewPin, addNewBoard, getBoardPins, getBoardName, deleteBoard, getAllUsersPins };
 });

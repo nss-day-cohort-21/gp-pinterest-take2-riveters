@@ -4,8 +4,27 @@
             <a href="#!" class="brand-logo left"><img src="app/assets/images/rosieLogo.png"></a>
             <li class="nav-Btn"><a ng-show="isLoggedIn" href="http://images.google.com" target="_blank">Find Images</a></li>
             <li class="nav-Btn"><a ng-show="isLoggedIn" ng-href="#!/">Show All Boards</a></li>
+            <li class="nav-Btn"><a ng-show="isLoggedIn" ng-href="#!/all-pins">Show All Rivets</a></li>
             <li class="nav-Btn"><a ng-show="!isLoggedIn">Login</a></li>
             <li class="nav-Btn"><a ng-show="isLoggedIn" ng-click="logout()">Logout</a></li>
         </ul>
     </div>
 </nav>
+
+
+
+<!-- BEGIN MODAL -->
+<div id="id02" class="w3-modal" ng-controller="addBoard">
+    <div class="w3-modal-content">
+        <div class="w3-container">
+            <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h3>Search!</h3>
+
+            <iframe src="http://google.com"></iframe>
+
+
+        </div>
+    </div>
+</div>
+</div>
+

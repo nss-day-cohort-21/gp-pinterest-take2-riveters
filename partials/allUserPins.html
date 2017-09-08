@@ -1,0 +1,20 @@
+<center>
+    <h2 class="headingTitle">Browse All Rivets</h2>
+</center>
+<div class="row">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search" ng-model="searchText">
+
+    <div class="col s12 m4" ng-repeat="item in allUserPins | filter:searchText">
+        <div id="" class="card-panel hoverable card">
+            <div class="card-image">
+                <img ng-src="{{item.img}}">
+            </div>
+            <div class="card-content">
+                <span class="card-title">{{item.title}}</span>
+                <p>{{item.description}}</p>
+                <p><a href="{{item.url}}" target="_blank">Visit the Website</a></p>
+                <p>TAGS: <a class="tags">{{item.tags}}</a></p>
+            </div>
+        </div>
+    </div>
+</div>
