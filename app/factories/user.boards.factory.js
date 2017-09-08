@@ -3,7 +3,7 @@
 // console.log('USER BOARDS');
 
 app.factory("UserBoards", function ($q, $http, FBCreds, authFactory) {
-    
+
     const getAllPins = function (user) {
         let pins = [];
         return $q((resolve, reject) => {

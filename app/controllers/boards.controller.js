@@ -24,10 +24,10 @@ app.controller("BoardsController", function($scope, authFactory, UserBoards, $ro
     };
 
     $scope.deleteBoard = function(boardId){
-        console.log("heeeeeeeeeyyyyyyyy");
+        console.log("deleteBoard");
             UserBoards.deleteBoard(boardId)
             .then( (irrelevant) => {
-            
+
                 $route.reload();
             });
         };

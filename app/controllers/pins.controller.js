@@ -10,6 +10,7 @@ app.controller("pinsController", function($scope, authFactory, UserBoards, $rout
     const showAllPins = function() {
         UserBoards.getAllPins(user)
             .then((pins) => {
+                // debugger;
                 console.log("showAllPins", pins);
                 $scope.pins = pins;
             });
