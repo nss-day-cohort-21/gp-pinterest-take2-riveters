@@ -1,79 +1,81 @@
 <!DOCTYPE html>
 <html ng-app="PinterestApp">
-    <head>
-        <title>Rivet It!</title>
-        <!-- ///////////STYLESHEETS START/////////// -->
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <!-- ///////////END STYLESHEETS/////////// -->
-    </head>
 
-    <body>
-        <!-- ///////////NAVIGATION START/////////// -->
-        <div ng-include="'partials/navbar.html'"></div>
-        <!-- ///////////NAVIGATION END/////////// -->
+<head>
+    <title>Rivet It!</title>
+    <!-- ///////////STYLESHEETS START/////////// -->
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- ///////////END STYLESHEETS/////////// -->
+</head>
+
+<body>
+    <!-- ///////////NAVIGATION START/////////// -->
+    <div ng-include="'partials/navbar.html'"></div>
+    <!-- ///////////NAVIGATION END/////////// -->
 
 
-        <!-- ///////////CONTAINER START/////////// -->
-        <main>
-            <div ng-view class="container">
+    <!-- ///////////CONTAINER START/////////// -->
+    <main>
+        <div ng-view class="container">
 
+        </div>
+
+    </main>
+
+
+    <!-- ///////////FOOTER START/////////// -->
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                <p id="copy-footer">© 2017 Built by The Riveters</p>
             </div>
+        </div>
+    </footer>
+    <!-- ///////////FOOTER END/////////// -->
 
-        </main>
+    <!-- ///////////SCRIPTS/////////// -->
+    <!-- JQUERY -->
+    <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <!-- ANGULAR -->
+    <script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+    <!-- FIREBASE -->
+    <script type="text/javascript" src="./lib/node_modules/firebase/firebase.js"></script>
+    <!-- JAVASCRIPTS -->
+    <script src="./app/app.js"></script>
+    <script src="./app/creds/fb.creds.js"></script>
+    <!-- factories -->
+    <script src="app/factories/auth.factory.js"></script>
+    <script src="app/factories/user.boards.factory.js"></script>
+    <!-- <script src="app/factories/filter.factory.js"></script> -->
+
+    <!--controllers -->
+    <script src="app/controllers/navbar.controller.js"></script>
+    <script src="app/controllers/test.controller.js"></script>
+    <script src="app/controllers/getBoardsandPins.controller.js"></script>
+    <script src="app/controllers/auth.controller.js"></script>
+    <script src="app/controllers/boards.controller.js"></script>
+    <script src="app/controllers/addpins.controller.js"></script>
+    <script src="app/controllers/addBoard.controller.js"></script>
+    <script src="app/controllers/pins.controller.js"></script>
+    <script src="app/controllers/boardDetails.controller.js"></script>
 
 
-        <!-- ///////////FOOTER START/////////// -->
-        <footer class="page-footer">
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2017 Built by The Riveters
-                </div>
-            </div>
-        </footer>
-        <!-- ///////////FOOTER END/////////// -->
 
-        <!-- ///////////SCRIPTS/////////// -->
-        <!-- JQUERY -->
-        <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
-        <!-- Materialize -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-        <!-- ANGULAR -->
-        <script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
-        <script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
-        <!-- FIREBASE -->
-        <script type="text/javascript" src="./lib/node_modules/firebase/firebase.js"></script>
-        <!-- JAVASCRIPTS -->
-        <script src="./app/app.js"></script>
-        <script src="./app/creds/fb.creds.js"></script>
-        <!-- factories -->
-        <script src="app/factories/auth.factory.js"></script>
-        <script src="app/factories/user.boards.factory.js"></script>
-        <!-- <script src="app/factories/filter.factory.js"></script> -->
-
-        <!--controllers -->
-        <script src="app/controllers/navbar.controller.js"></script>
-        <script src="app/controllers/test.controller.js"></script> 
-        <script src="app/controllers/getBoardsandPins.controller.js"></script>
-        <script src="app/controllers/auth.controller.js"></script>
-        <script src="app/controllers/boards.controller.js"></script>
-        <script src="app/controllers/addpins.controller.js"></script>
-        <script src="app/controllers/addBoard.controller.js"></script>
-        <script src="app/controllers/pins.controller.js"></script>
-        <script src="app/controllers/boardDetails.controller.js"></script>
-        
-        
-        
-        <!-- <script src="app/controllers/boards.controller.js"></script> -->
+    <!-- <script src="app/controllers/boards.controller.js"></script> -->
 
 
 
 
 
-        <!-- ///////////END SCRIPTS/////////// -->
-    </body>
+    <!-- ///////////END SCRIPTS/////////// -->
+</body>
+
 </html>
