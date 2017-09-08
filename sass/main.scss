@@ -46,8 +46,14 @@ button {
 }
 
 .material-icons {
-    padding: 8px;
-    margin-top: 16px;
+    // padding: 8px;
+    // margin-top: 16px;
+    padding-right: 8px !important;
+    padding-top: 2px !important;
+}
+
+.style-icon{
+
 }
 
 .loginTable{
@@ -95,13 +101,14 @@ input.loginInput{
 }
 
 .footer-copyright {
-    color: black;
-    font-size: 2em;
-    font-weight: bolder;
+    color: black !important;
+    font-size: 2em !important;
+    font-weight: bolder !important;
+    text-shadow: 2px 2px 5px lightgray;
 }
 
 .tags{
-    color: blue;
+    color: #252F6B;
     font-weight: bold;
     font-size: .8em;
     font-style: italic;
